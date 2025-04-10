@@ -21,6 +21,15 @@
         group: 'root'
         mode: '644'
 
+    - name: Install Polly's TLS cert to trusted store.
+      become: true
+      ansible.builtin.copy:
+        src: './certs/polly.reed.edu.pem'
+        dest: '/usr/local/share/ca-certificates/polly.reed.edu.crt'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
+
     - name: Install Patty's TLS cert to trusted store.
       become: true
       ansible.builtin.copy:
@@ -49,7 +58,7 @@
         group: 'root'
         mode: '0755'
 
-    - name: Install Patty's TLS cert to a Firefox-readable directory.
+    - name: Install TLS certs to a Firefox-readable directory.
       become: true
       ansible.builtin.copy:
         src: './certs'
@@ -70,7 +79,7 @@
           {
             "policies": {
               "Certificates": {
-                "Install": ["/etc/firefox/certs/patty.reed.edu.pem"]
+                "Install": ["/etc/firefox/certs/patty.reed.edu.pem" "/etc/firefox/certs/polly.reed.edu.pem"]
               }
             }
           }
