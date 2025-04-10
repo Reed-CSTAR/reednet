@@ -36,6 +36,7 @@
               buildInputs = [
                 pkgs.ansible
                 pkgs.mkpasswd
+                pkgs.sshpass
                 (pkgs.writeShellScriptBin "poly-run-ansible" ''
                   exec ${getExe' pkgs.ansible "ansible-playbook"} -i inventory.ini playbook.yaml -K "$@"
                 '')
