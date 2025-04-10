@@ -21,7 +21,7 @@
         group: 'root'
         mode: '644'
 
-    - name: Install Patty's TLS cert.
+    - name: Install Patty's TLS cert to trusted store.
       become: true
       ansible.builtin.copy:
         src: './certs/patty.reed.edu.pem'
@@ -33,6 +33,47 @@
     - name: Update CA certs.
       become: true
       ansible.builtin.command: 'update-ca-certificates'
+
+    # Firefox doesn't support using system-trusted TLS certs on Linux. And,
+    # because Snaps, we can't actually access /etc/ssl/whatever or
+    # /usr/local/share/ca-certificates from FF.
+    #
+    # This is a multi-step process. First, ensure the existence of the
+    # requisite directory.
+    - name: Ensure /etc/firefox/policies exists.
+      become: true
+      ansible.builtin.file:
+        path: '/etc/firefox/policies/'
+        state: 'directory'
+        owner: 'root'
+        group: 'root'
+        mode: '0755'
+
+    - name: Install Patty's TLS cert to a Firefox-readable directory.
+      become: true
+      ansible.builtin.copy:
+        src: './certs'
+        dest: '/etc/firefox/'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
+
+    # For now, the only thing we do is trust Patty's TLS cert.
+    - name: Set Firefox policies.json
+      become: true
+      ansible.builtin.copy:
+        dest: '/etc/firefox/policies/policies.json'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
+        content: |
+          {
+            "policies": {
+              "Certificates": {
+                "Install": ["/etc/firefox/certs/patty.reed.edu.pem"]
+              }
+            }
+          }
 
     # Synchronize globally installed packages
     - import_tasks: packages.yaml
