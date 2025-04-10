@@ -21,6 +21,18 @@
         group: 'root'
         mode: '644'
 
+    - name: Install Patty's TLS cert.
+      become: true
+      ansible.builtin.copy:
+        src: './certs/patty.reed.edu.pem'
+        dest: '/usr/local/share/ca-certificates/patty.reed.edu.crt'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
+
+    - name: Update CA certs.
+      become: true
+      ansible.builtin.command: 'update-ca-certificates'
 
     # Synchronize globally installed packages
     - import_tasks: packages.yaml
