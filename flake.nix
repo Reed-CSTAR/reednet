@@ -45,7 +45,7 @@
                 '')
               ];
               shellHook = ''
-                if ! [ $(id -u -n) == sam ]; then
+                if ! [[ "$(id -u -n)" =~ ^(sam|a?tali)$ ]]; then
                   cat <<< "This dev shell is meant for administration of CS department computers.
                 You likely ran something along the lines of
 
