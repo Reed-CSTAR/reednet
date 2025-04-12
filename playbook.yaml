@@ -89,11 +89,3 @@
 
     # Synchronize users
     - import_tasks: users.yaml
-
-        
-
-    # falcon
-    # nix
-    # tailscale
-    # motd
-    # /etc/hosts
