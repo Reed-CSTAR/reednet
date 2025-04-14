@@ -38,7 +38,7 @@
                 pkgs.mkpasswd
                 pkgs.sshpass
                 (pkgs.writeShellScriptBin "poly-run-ansible" ''
-                  exec ${getExe' pkgs.ansible "ansible-playbook"} -i inventory.ini playbook.yaml -K -u polytopia "$@"
+                  exec ${getExe' pkgs.ansible "ansible-playbook"} -i inventory.yaml playbook.yaml -K -u polytopia "$@"
                 '')
                 (pkgs.writeShellScriptBin "poly-hash-password" ''
                   exec ${getExe pkgs.mkpasswd} --method=sha-512 "$@"

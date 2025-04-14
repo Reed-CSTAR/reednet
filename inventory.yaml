@@ -1,0 +1,15 @@
+servers:
+  hosts:
+    peggy.reed.edu:
+    polly.reed.edu:
+
+guis:
+  hosts:
+    patty.reed.edu:
+  children:
+    dumplings:
+      hosts:
+        gyoza.reed.edu:
+        banku.reed.edu:
+        empanada.reed.edu:
+        pierogi.reed.edu:

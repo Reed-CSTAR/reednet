@@ -1,5 +1,5 @@
 - name: Synchronize reednet computers
-  hosts: reednet
+  hosts: all
   tasks:
     - name: Ensure SSH accepts env vars
       become: true
