@@ -362,3 +362,24 @@
     state: present
     system: false
     update_password: on_create
+- name: Synchronize group 'paramkapur'
+  become: true
+  ansible.builtin.group:
+    name: paramkapur
+    state: present
+    system: false
+- name: Synchronize user 'paramkapur'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Param Kapur,,,
+    create_home: true
+    generate_ssh_key: false
+    group: paramkapur
+    groups: users
+    name: paramkapur
+    password: '$6$YO8O.Fa1CSGMCdHZ$8/ijuA/aSZ7RMWCwiLWFxvO5kfMk4uZQwuDxXygg6i3B.dWyp7iEgtKvnUtLWzq6JuYltT5kJyI6E2zf39fs00'
+    shell: '/usr/bin/bash'
+    state: present
+    system: false
+    update_password: on_create
