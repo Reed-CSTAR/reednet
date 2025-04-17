@@ -41,7 +41,7 @@
                   exec ${getExe' pkgs.ansible "ansible-playbook"} -i inventory.yaml playbook.yaml -K -k -u polytopia "$@"
                 '')
                 (pkgs.writeShellScriptBin "poly-hash-password" ''
-                  exec ${getExe pkgs.mkpasswd} --method=sha-512 "$@"
+                  exec ${getExe pkgs.mkpasswd} --method=yescrypt "$@"
                 '')
               ];
               shellHook = ''
