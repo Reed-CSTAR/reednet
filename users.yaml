@@ -383,3 +383,24 @@
     state: present
     system: false
     update_password: on_create
+- name: Synchronize group 'bsmith'
+  become: true
+  ansible.builtin.group:
+    name: bsmith
+    state: present
+    system: false
+- name: Synchronize user 'bsmith'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: B Smith,,,
+    create_home: true
+    generate_ssh_key: false
+    group: bsmith
+    groups: users
+    name: bsmith
+    password: '$y$j9T$kH3DkHKI8t6kUHTgz3GpX1$8tMUxobm4xKf4VNnIbNLK/9zIDC.f2ES3iazRs0IQL6'
+    shell: '/usr/bin/bash'
+    state: present
+    system: false
+    update_password: on_create
