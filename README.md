@@ -35,18 +35,11 @@ Perhaps we only want to update dev shells in between semesters, so that they are
 ##### Running the playbook
 
 1. Install Ansible (you can launch a subshell that provides Ansible via `nix develop`)
-2. Run the playbook
-
+2. Run the playbook, either with `poly-run-ansible` in the Nix shell, or by
+   manually invoking
     ```bash
-    ansible-playbook -i inventory.ini playbook.yaml -K
+    ansible-playbook -i inventory.yaml playbook.yaml -K -k -u polytopia
     ```
-
-    If you're using the dev shell:
-    ```bash
-    poly-run-ansible
-    ```
-
-    Note that you need SSH host configurations for all machines, since they are defined in the inventory without their FQDNs
 
 ##### Adding users
 
