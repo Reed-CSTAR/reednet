@@ -49,3 +49,12 @@
 
     # Synchronize users
     - import_tasks: users.yaml
+
+    - name: Install poly-authelia-users-from-shadow
+      become: true
+      ansible.builtin.copy:
+        src: './scripts/authelia-users-from-shadow.py'
+        dest: '/usr/local/bin/poly-authelia-users-from-shadow'
+        group: 'root'
+        owner: 'root'
+        mode: '555'
