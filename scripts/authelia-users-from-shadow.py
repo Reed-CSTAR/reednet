@@ -28,15 +28,16 @@ def process_shadow(line: str) -> dict:
     }
 
 def write_users_yaml(users: dict):
-    try:
+    def inner():
         with open('/var/lib/authelia/users.yml', 'x') as f:
             yaml.dump(users, f)
 
+    try: inner()
     except FileExistsError as e: 
         ts = datetime.now().isoformat()
+        print(f'Renaming existing conf to /var/lib/authelia/users.yml-{ts}')
         os.rename('/var/lib/authelia/users.yml', f'/var/lib/authelia/users-{ts}.yml')
-        # TODO: log rename and retry without waiting
-        raise e
+        inner()
 
 
 def jitter_retry(n, f, *args, **kwargs):
