@@ -21,22 +21,6 @@
         group: 'root'
         mode: '644'
 
-    - name: Delete Polly's TLS cert from trusted store.
-      become: true
-      ansible.builtin.file:
-        path: '/usr/local/share/ca-certificates/polly.reed.edu.crt'
-        state: 'absent'
-
-    - name: Delete Patty's TLS cert from trusted store.
-      become: true
-      ansible.builtin.file:
-        path: '/usr/local/share/ca-certificates/patty.reed.edu.crt'
-        state: 'absent'
-
-    - name: Update CA certs.
-      become: true
-      ansible.builtin.command: 'update-ca-certificates'
-
     # If we need custom certs again, Firefox needs them specially configured here.
     - name: Ensure /etc/firefox/policies exists.
       become: true
@@ -46,12 +30,6 @@
         owner: 'root'
         group: 'root'
         mode: '0755'
-
-    - name: Install TLS certs to a Firefox-readable directory.
-      become: true
-      ansible.builtin.file:
-        path: '/etc/firefox/certs'
-        state: 'absent'
 
     # Do nothing for now.
     - name: Set Firefox policies.json
