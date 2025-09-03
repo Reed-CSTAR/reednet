@@ -21,34 +21,23 @@
         group: 'root'
         mode: '644'
 
-    - name: Install Polly's TLS cert to trusted store.
+    - name: Delete Polly's TLS cert from trusted store.
       become: true
-      ansible.builtin.copy:
-        src: './certs/polly.reed.edu.pem'
-        dest: '/usr/local/share/ca-certificates/polly.reed.edu.crt'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
+      ansible.builtin.file:
+        path: '/usr/local/share/ca-certificates/polly.reed.edu.crt'
+        state: 'absent'
 
-    - name: Install Patty's TLS cert to trusted store.
+    - name: Delete Patty's TLS cert from trusted store.
       become: true
-      ansible.builtin.copy:
-        src: './certs/patty.reed.edu.pem'
-        dest: '/usr/local/share/ca-certificates/patty.reed.edu.crt'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
+      ansible.builtin.file:
+        path: '/usr/local/share/ca-certificates/patty.reed.edu.crt'
+        state: 'absent'
 
     - name: Update CA certs.
       become: true
       ansible.builtin.command: 'update-ca-certificates'
 
-    # Firefox doesn't support using system-trusted TLS certs on Linux. And,
-    # because Snaps, we can't actually access /etc/ssl/whatever or
-    # /usr/local/share/ca-certificates from FF.
-    #
-    # This is a multi-step process. First, ensure the existence of the
-    # requisite directory.
+    # If we need custom certs again, Firefox needs them specially configured here.
     - name: Ensure /etc/firefox/policies exists.
       become: true
       ansible.builtin.file:
@@ -60,14 +49,11 @@
 
     - name: Install TLS certs to a Firefox-readable directory.
       become: true
-      ansible.builtin.copy:
-        src: './certs'
-        dest: '/etc/firefox/'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
+      ansible.builtin.file:
+        path: '/etc/firefox/certs'
+        state: 'absent'
 
-    # For now, the only thing we do is trust Patty's TLS cert.
+    # Do nothing for now.
     - name: Set Firefox policies.json
       become: true
       ansible.builtin.copy:
@@ -77,11 +63,7 @@
         mode: '644'
         content: |
           {
-            "policies": {
-              "Certificates": {
-                "Install": ["/etc/firefox/certs/patty.reed.edu.pem" "/etc/firefox/certs/polly.reed.edu.pem"]
-              }
-            }
+            "policies": {}
           }
 
     # Synchronize globally installed packages
