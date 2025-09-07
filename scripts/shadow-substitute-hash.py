@@ -2,10 +2,11 @@
 
 import argparse, shutil
 
-SHADOW_PATH = './etc/shadow'
+SHADOW_PATH = '/etc/shadow'
 
 def set_hash(old_shadow, user, hash) -> str:
     new_shadow_path = '/tmp/new_shadow'
+    # TODO: perms
     with open(new_shadow_path, 'w') as new_shadow:
         for line in old_shadow:
             if line.startswith(f'{user}:'):

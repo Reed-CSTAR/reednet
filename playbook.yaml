@@ -58,3 +58,29 @@
         group: 'root'
         owner: 'root'
         mode: '555'
+
+    - name: Install poly-shadow-substitute-hash
+      become: true
+      ansible.builtin.copy:
+        src: './scripts/shadow-substitute-hash.py'
+        dest: '/usr/local/bin/poly-shadow-substitute-hash'
+        group: 'root'
+        owner: 'root'
+        mode: '555'
+
+    - name: Install poly-shadow-syncd
+      become: true
+      ansible.builtin.copy:
+        src: './scripts/shadow-syncd.py'
+        dest: '/usr/local/bin/poly-shadow-syncd'
+        group: 'root'
+        owner: 'root'
+        mode: '555'
+
+    - name: Trust Polly's SSH key
+      become: true
+      ansible.posix.authorized_key:
+        user: root
+        state: present
+        key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
+

@@ -1,4 +1,4 @@
-- name: Synchronize globally installed packages
+- name: Synchronize globally installed dpkgs
   become: true
   ansible.builtin.apt:
     pkg:
@@ -24,6 +24,8 @@
       - vim
       - neovim
       - emacs
+      - python3-inotify
+      - python3-yaml
     state: latest
     update_cache: yes
     cache_valid_time: 3600
