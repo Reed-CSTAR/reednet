@@ -19,12 +19,6 @@
     state: present
     system: false
     update_password: on_create
-- name: Synchronize group 'pnorton'
-  become: true
-  ansible.builtin.group:
-    name: pnorton
-    state: present
-    system: false
 - name: Synchronize user 'pnorton'
   become: true
   ansible.builtin.user:
@@ -37,9 +31,15 @@
     name: pnorton
     password: '$6$tmYYapuWYC7dqcYI$kh5/cpCmxVhOqmlMeB9okizLcyv1QAC0ar8vuWfPg2YnvwhUVMinjWjHWqHnIDOwF4GJmjHQImfz.Vg8lp0M21'
     shell: '/usr/bin/bash'
-    state: present
+    state: absent
     system: false
     update_password: on_create
+- name: Synchronize group 'pnorton'
+  become: true
+  ansible.builtin.group:
+    name: pnorton
+    state: absent
+    system: false
 - name: Synchronize group 'doranp'
   become: true
   ansible.builtin.group:
@@ -103,12 +103,6 @@
     state: present
     system: false
     update_password: on_create
-- name: Synchronize group 'kwilson'
-  become: true
-  ansible.builtin.group:
-    name: kwilson
-    state: present
-    system: false
 - name: Synchronize user 'kwilson'
   become: true
   ansible.builtin.user:
@@ -121,9 +115,15 @@
     name: kwilson
     password: '$6$g3jZrLHt3BI61F5D$nSbRF3MU2u.IRiYq3pLxrE02fgIwxVO1r0nxh91be2rBlOxe9vQX3rBvuV3uAYqj5MaBtUFgrCPWARuLcAGrL0'
     shell: '/usr/bin/bash'
-    state: present
+    state: absent
     system: false
     update_password: on_create
+- name: Synchronize group 'kwilson'
+  become: true
+  ansible.builtin.group:
+    name: kwilson
+    state: absent
+    system: false
 - name: Synchronize group 'tristanf'
   become: true
   ansible.builtin.group:
@@ -145,12 +145,6 @@
     state: present
     system: false
     update_password: on_create
-- name: Synchronize group 'vzaayer'
-  become: true
-  ansible.builtin.group:
-    name: vzaayer
-    state: present
-    system: false
 - name: Synchronize user 'vzaayer'
   become: true
   ansible.builtin.user:
@@ -163,9 +157,15 @@
     name: vzaayer
     password: '$6$Q/3OT5RFLrSVluIh$X.bnt2Ep72B7V40RafSFevMUieP8nuEhRLMdjNzOPvbGDMaDX0EzYRssJpAXBLMRPuaQ21cmU5BB7ytBwsO910'
     shell: '/usr/bin/bash'
-    state: present
+    state: absent
     system: false
     update_password: on_create
+- name: Synchronize group 'vzaayer'
+  become: true
+  ansible.builtin.group:
+    name: vzaayer
+    state: absent
+    system: false
 - name: Synchronize group 'araney'
   become: true
   ansible.builtin.group:
@@ -208,12 +208,6 @@
     state: present
     system: false
     update_password: on_create
-- name: Synchronize group 'aidanm'
-  become: true
-  ansible.builtin.group:
-    name: aidanm
-    state: present
-    system: false
 - name: Synchronize user 'aidanm'
   become: true
   ansible.builtin.user:
@@ -226,9 +220,15 @@
     name: aidanm
     password: '$6$HepMbNitLSxxH9kS$o59Y5ex.fBU1zafx0nXVPgD/rtT5eT7KzGZ36VcVm49CYQ4dFDXDDcWnTJVocUJTmxUa3iDgnZhXqnXceE6150'
     shell: '/usr/bin/bash'
-    state: present
+    state: absent
     system: false
     update_password: on_create
+- name: Synchronize group 'aidanm'
+  become: true
+  ansible.builtin.group:
+    name: aidanm
+    state: absent
+    system: false
 - name: Synchronize group 'atali'
   become: true
   ansible.builtin.group:
@@ -271,12 +271,6 @@
     state: present
     system: false
     update_password: on_create
-- name: Synchronize group 'sam'
-  become: true
-  ansible.builtin.group:
-    name: sam
-    state: present
-    system: false
 - name: Synchronize user 'sam'
   become: true
   ansible.builtin.user:
@@ -296,14 +290,14 @@
     name: sam
     password: '$6$jsqs916d6XuFctty$RBWOTt1yGXpyduqXQ0aF3ZXu2z6EFQ9iKeM7Ij3QhkPYzBEd9FSt.aymgU.UwGflyVYy3G0UeWy9wBXkZdMD11'
     shell: '/usr/bin/fish'
-    state: present
+    state: absent
     system: false
     update_password: on_create
-- name: Synchronize group 'gabeh'
+- name: Synchronize group 'sam'
   become: true
   ansible.builtin.group:
-    name: gabeh
-    state: present
+    name: sam
+    state: absent
     system: false
 - name: Synchronize user 'gabeh'
   become: true
@@ -317,14 +311,14 @@
     name: gabeh
     password: '$6$9h3xGhV1t/fIR9/G$6k5u6V4l/UryNcbL8zxDdHvrZhHTnOXHmDCxtk9j0Kq1X.gwUlNkFpet7ob3NjUNHV7utjn2b19BGQugzHLFy/'
     shell: '/usr/bin/bash'
-    state: present
+    state: absent
     system: false
     update_password: on_create
-- name: Synchronize group 'elenag'
+- name: Synchronize group 'gabeh'
   become: true
   ansible.builtin.group:
-    name: elenag
-    state: present
+    name: gabeh
+    state: absent
     system: false
 - name: Synchronize user 'elenag'
   become: true
@@ -338,9 +332,15 @@
     name: elenag
     password: '$6$X7gd0BTLNe5eyw8R$6HtgDI6b66dfJDT34XQoJcF2bxaXfq2rg9R3ztVuhUH0ZLBoLSHtqueqtCdvOOqKjb42F1UpsRQV3YgxBtCQm1'
     shell: '/usr/bin/bash'
-    state: present
+    state: absent
     system: false
     update_password: on_create
+- name: Synchronize group 'elenag'
+  become: true
+  ansible.builtin.group:
+    name: elenag
+    state: absent
+    system: false
 - name: Synchronize group 'mbear'
   become: true
   ansible.builtin.group:
