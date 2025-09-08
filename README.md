@@ -91,8 +91,3 @@ We run [Coder](https://coder.com/) for reproducible development environments
 --- if a class requires that you use CUDA, you can use [our Coder
 instance](https://patty.reed.edu:4443/) to access a Docker container running on
 Patty.
-
-Coder is secured by [Authelia](https://authelia.com/). An account on CSTAR
-machines does not yet automatically mean you have an account on Authelia and
-therefore access to Coder. If you'd like access and do not currently have it,
-send CSTAR an email.
