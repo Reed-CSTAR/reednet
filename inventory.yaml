@@ -1,11 +1,11 @@
 servers:
   hosts:
-    peggy.reed.edu:
     polly.reed.edu:
+    patty.reed.edu:
 
 guis:
   hosts:
-    patty.reed.edu:
+    peggy.reed.edu:
   children:
     dumplings:
       hosts:
