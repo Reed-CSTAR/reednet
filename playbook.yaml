@@ -84,3 +84,14 @@
         state: present
         key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
 
+- name: Disable password changing on applicable hosts
+  hosts: all:!shadowsource
+  tasks:
+    - name: Override passwd
+      become: true
+      ansible.builtin.copy:
+        src: './scripts/passwd.sh'
+        dest: '/usr/local/bin/passwd'
+        group: 'root'
+        owner: 'root'
+        mode: '555'

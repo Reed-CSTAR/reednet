@@ -13,3 +13,8 @@ guis:
         banku.reed.edu:
         empanada.reed.edu:
         pierogi.reed.edu:
+
+# (The) machine(s) marked shadowsource run shadow-syncd and should not have a custom passwd.
+shadowsource:
+  hosts:
+    polly.reed.edu:
