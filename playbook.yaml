@@ -47,9 +47,6 @@
     # Synchronize globally installed packages
     - import_tasks: packages.yaml
 
-    # Synchronize users
-    - import_tasks: users.yaml
-
     - name: Install poly-authelia-users-from-shadow
       become: true
       ansible.builtin.copy:
@@ -95,3 +92,19 @@
         group: 'root'
         owner: 'root'
         mode: '555'
+
+    # This is literally the best way to disable password changing from the GNOME GUI.
+    - name: Disable GNOME System Settings Panel
+      become: true
+      ansible.builtin.copy:
+        content: |
+          # See Ansible playbook :)
+        dest: '/usr/share/applications/gnome-system-panel.desktop'
+        group: 'root'
+        mode: '644'
+        owner: 'root'
+
+- name: Synchronize users.
+  hosts: all
+  tasks:
+    - import_tasks: users.yaml
