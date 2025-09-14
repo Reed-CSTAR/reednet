@@ -107,4 +107,4 @@
 - name: Synchronize users.
   hosts: all
   tasks:
-    - import_tasks: users.yaml
+    - import_tasks: ./users/users.yaml

@@ -57,7 +57,7 @@ Perhaps we only want to update dev shells in between semesters, so that they are
     ```
 
     Using our example, this gives `$6$e0A7MR6aAnL3r9Y5$WevmaiUlUo6p67OErBd8.krTCTg/36EnNrpj8zUJKNWwIn3L7MqSmc3rOPupmajxJQ9z3N9Hsg7x9GaZfeVZr.`
-4. Add user and group entries to `users.yaml`
+4. Add user and group entries to `users/users.yaml`
 
     ```yaml
     - name: Synchronize group 'sam'
