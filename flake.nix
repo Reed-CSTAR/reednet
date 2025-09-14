@@ -42,6 +42,7 @@
           default = pkgs.mkShell {
             buildInputs = [
               pkgs.ansible
+              pkgs.ansible-lint
               pkgs.dhall
               pkgs.mkpasswd
               pkgs.sshpass
