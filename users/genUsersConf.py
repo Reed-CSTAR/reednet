@@ -47,7 +47,7 @@ USERS: list[User] = [
         User('doranp', 'Doran Penner', '$6$am88QaRysD4qMGpU$OQd/DnqyqdqepzZh/hGUc4OH2L/XzJ.qgVpj0oAK8gO17I0jAoTmiMvtwJar9U0SNm2UIhAR5t8DKrRt/Tt.a/', '/usr/bin/bash'),
         User('milesc', 'Miles Churchland', '$6$d12j/M9OSkHt.pEB$0d5cY/CbP/b98Xpi58qpofOtdy3vm5avUBiVBYlkWCrH4HS/YGZzW.ZTbiW3OVToge63W0IbSHlzAvOPytRB6/', '/usr/bin/bash'),
         User('mniederman', 'Max Niederman', '$6$YURLZMDLoc8fMaJZ$rCVagSrg.1HL6hibwMxxUQAc5FJf8/1nDj93HGu2nFbXI1f6r1z2OVumYFAAs6hLNTlCuvc6wcx6eTqjMvqBb.', '/usr/bin/bash'),
-        User('tristanf', 'Tristan Figueroa-Reid', '$6$5ZETrZ8YpL7eXJZq$nlUUKuc.20TU/hwfuNf9lm2CHH9RZJnVolCDQEUpao7ta3Gi2Mk6T3fV9M2W1hMpK9FGNY6gmdgSw8N0ERT8J0', '/usr/bin/bash'),
+        User('tristanf', 'Tristan Yikes', '$6$5ZETrZ8YpL7eXJZq$nlUUKuc.20TU/hwfuNf9lm2CHH9RZJnVolCDQEUpao7ta3Gi2Mk6T3fV9M2W1hMpK9FGNY6gmdgSw8N0ERT8J0', '/usr/bin/bash'),
         User('araney', 'Aoife Raney', '$6$J.RhfjcRPod4bxGa$hTbEVDzqrdL3ntEcFrMHrcGXpHxxRjE.hr6rR1ylmnNXhGfGUrqOSy3T4YvJtJBM0t2gYZIzxFZ8VULBBWzah/', '/usr/bin/bash'),
         User('yiyuanli', 'Yi Yuanli', '$6$yihWRkzhnthb4LiZ$nFS.c5uGj7SmDDMSQ0cG6asxwfvrTbQ2TvVtjeynYqCa/gEHULIJywMOx61LHI93ac3wj6QneazYuNgjmxmBn.', '/usr/bin/bash'),
         User('atali', 'Tali Auster', '$6$dhsmCbDovRsHoxk5$mvIfD/aq.bFy2e.OGTfyjyDeuNm8OZ4WmTja2ma7VWeoiLnZZaoZ1PeIspi9VojMGJ8guSytcnYRYRC0xX0z2/', '/usr/bin/bash'),

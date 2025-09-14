@@ -88,7 +88,7 @@
   become: true
   ansible.builtin.user:
     append: false
-    comment: Tristan Figueroa-Reid,,,
+    comment: Tristan Yikes,,,
     generate_ssh_key: false
     group: tristanf
     groups: users
@@ -188,7 +188,7 @@
   become: true
   ansible.builtin.user:
     append: false
-    comment: Micheal Bear,,,
+    comment: Michael Bear,,,
     generate_ssh_key: false
     group: mbear
     groups: users
