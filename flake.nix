@@ -42,6 +42,7 @@
           default = pkgs.mkShell {
             buildInputs = [
               pkgs.ansible
+              pkgs.dhall
               pkgs.mkpasswd
               pkgs.sshpass
               (pkgs.writeShellScriptBin "poly-run-ansible" ''
