@@ -1,10 +1,10 @@
 name: Lint Ansible configs
 on: [workflow_dispatch, push]
-
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - run: sudo apt install -y ansible
+      - run: ansible-galaxy collection install ansible.posix
       - uses: actions/checkout@v4
       - uses: ansible/ansible-lint@main
-
