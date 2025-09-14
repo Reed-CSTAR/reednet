@@ -44,8 +44,8 @@
             "policies": {}
           }
 
-    # Synchronize globally installed packages
-    - import_tasks: packages.yaml
+    - name: Synchronize globally installed packages.
+      ansible.builtin.import_tasks: packages.yaml
 
     - name: Install poly-authelia-users-from-shadow
       become: true
@@ -107,4 +107,5 @@
 - name: Synchronize users.
   hosts: all
   tasks:
-    - import_tasks: ./users/users.yaml
+    - name: Synchronize users.
+      ansible.builtin.import_tasks: ./users/users.yaml
