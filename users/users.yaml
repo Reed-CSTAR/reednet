@@ -9,13 +9,12 @@
   ansible.builtin.user:
     append: false
     comment: Connor Gilligan,,,
-    create_home: true
     generate_ssh_key: false
     group: cgilligan
     groups: users
     name: cgilligan
-    password: '$6$gRtgcuWcABqI42ce$qQfgk1tf.Ui6X3VvH9OTVclaVHr6PMQX.oNvj2mWbTw.VTsnPvMbmC5bKlzGms1Ns/FUWRRXA/dDHpz..NAEQ/'
-    shell: '/usr/bin/fish'
+    password: $6$gRtgcuWcABqI42ce$qQfgk1tf.Ui6X3VvH9OTVclaVHr6PMQX.oNvj2mWbTw.VTsnPvMbmC5bKlzGms1Ns/FUWRRXA/dDHpz..NAEQ/
+    shell: /usr/bin/fish
     state: present
     system: false
     update_password: on_create
@@ -30,13 +29,12 @@
   ansible.builtin.user:
     append: false
     comment: Doran Penner,,,
-    create_home: true
     generate_ssh_key: false
     group: doranp
     groups: users
     name: doranp
-    password: '$6$am88QaRysD4qMGpU$OQd/DnqyqdqepzZh/hGUc4OH2L/XzJ.qgVpj0oAK8gO17I0jAoTmiMvtwJar9U0SNm2UIhAR5t8DKrRt/Tt.a/'
-    shell: '/usr/bin/bash'
+    password: $6$am88QaRysD4qMGpU$OQd/DnqyqdqepzZh/hGUc4OH2L/XzJ.qgVpj0oAK8gO17I0jAoTmiMvtwJar9U0SNm2UIhAR5t8DKrRt/Tt.a/
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -51,13 +49,12 @@
   ansible.builtin.user:
     append: false
     comment: Miles Churchland,,,
-    create_home: true
     generate_ssh_key: false
     group: milesc
     groups: users
     name: milesc
-    password: '$6$d12j/M9OSkHt.pEB$0d5cY/CbP/b98Xpi58qpofOtdy3vm5avUBiVBYlkWCrH4HS/YGZzW.ZTbiW3OVToge63W0IbSHlzAvOPytRB6/'
-    shell: '/usr/bin/bash'
+    password: $6$d12j/M9OSkHt.pEB$0d5cY/CbP/b98Xpi58qpofOtdy3vm5avUBiVBYlkWCrH4HS/YGZzW.ZTbiW3OVToge63W0IbSHlzAvOPytRB6/
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -72,13 +69,12 @@
   ansible.builtin.user:
     append: false
     comment: Max Niederman,,,
-    create_home: true
     generate_ssh_key: false
     group: mniederman
     groups: users
     name: mniederman
-    password: '$6$YURLZMDLoc8fMaJZ$rCVagSrg.1HL6hibwMxxUQAc5FJf8/1nDj93HGu2nFbXI1f6r1z2OVumYFAAs6hLNTlCuvc6wcx6eTqjMvqBb.'
-    shell: '/usr/bin/bash'
+    password: $6$YURLZMDLoc8fMaJZ$rCVagSrg.1HL6hibwMxxUQAc5FJf8/1nDj93HGu2nFbXI1f6r1z2OVumYFAAs6hLNTlCuvc6wcx6eTqjMvqBb.
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -93,13 +89,12 @@
   ansible.builtin.user:
     append: false
     comment: Tristan Figueroa-Reid,,,
-    create_home: true
     generate_ssh_key: false
     group: tristanf
     groups: users
     name: tristanf
-    password: '$6$5ZETrZ8YpL7eXJZq$nlUUKuc.20TU/hwfuNf9lm2CHH9RZJnVolCDQEUpao7ta3Gi2Mk6T3fV9M2W1hMpK9FGNY6gmdgSw8N0ERT8J0'
-    shell: '/usr/bin/bash'
+    password: $6$5ZETrZ8YpL7eXJZq$nlUUKuc.20TU/hwfuNf9lm2CHH9RZJnVolCDQEUpao7ta3Gi2Mk6T3fV9M2W1hMpK9FGNY6gmdgSw8N0ERT8J0
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -114,13 +109,12 @@
   ansible.builtin.user:
     append: false
     comment: Aoife Raney,,,
-    create_home: true
     generate_ssh_key: false
     group: araney
     groups: users
     name: araney
-    password: '$6$J.RhfjcRPod4bxGa$hTbEVDzqrdL3ntEcFrMHrcGXpHxxRjE.hr6rR1ylmnNXhGfGUrqOSy3T4YvJtJBM0t2gYZIzxFZ8VULBBWzah/'
-    shell: '/usr/bin/bash'
+    password: $6$J.RhfjcRPod4bxGa$hTbEVDzqrdL3ntEcFrMHrcGXpHxxRjE.hr6rR1ylmnNXhGfGUrqOSy3T4YvJtJBM0t2gYZIzxFZ8VULBBWzah/
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -135,13 +129,12 @@
   ansible.builtin.user:
     append: false
     comment: Yi Yuanli,,,
-    create_home: true
     generate_ssh_key: false
     group: yiyuanli
     groups: users
     name: yiyuanli
-    password: '$6$yihWRkzhnthb4LiZ$nFS.c5uGj7SmDDMSQ0cG6asxwfvrTbQ2TvVtjeynYqCa/gEHULIJywMOx61LHI93ac3wj6QneazYuNgjmxmBn.'
-    shell: '/usr/bin/bash'
+    password: $6$yihWRkzhnthb4LiZ$nFS.c5uGj7SmDDMSQ0cG6asxwfvrTbQ2TvVtjeynYqCa/gEHULIJywMOx61LHI93ac3wj6QneazYuNgjmxmBn.
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -156,13 +149,12 @@
   ansible.builtin.user:
     append: false
     comment: Tali Auster,,,
-    create_home: true
     generate_ssh_key: false
     group: atali
     groups: users
     name: atali
-    password: '$6$dhsmCbDovRsHoxk5$mvIfD/aq.bFy2e.OGTfyjyDeuNm8OZ4WmTja2ma7VWeoiLnZZaoZ1PeIspi9VojMGJ8guSytcnYRYRC0xX0z2/'
-    shell: '/usr/bin/bash'
+    password: $6$dhsmCbDovRsHoxk5$mvIfD/aq.bFy2e.OGTfyjyDeuNm8OZ4WmTja2ma7VWeoiLnZZaoZ1PeIspi9VojMGJ8guSytcnYRYRC0xX0z2/
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -177,13 +169,12 @@
   ansible.builtin.user:
     append: false
     comment: Duncan Stewardson,,,
-    create_home: true
     generate_ssh_key: false
     group: dstewardson
     groups: users
     name: dstewardson
-    password: '$6$mJrOZv3CIcA7j0Q5$50i6HXAnmfbf/fbPKBJaInBfnxMXe7kuccHxFIxZd0DqpoTx75PXdkg8NKqI3vsXAzqCUoGSR2WE9J/8vPqrA1'
-    shell: '/usr/bin/bash'
+    password: $6$mJrOZv3CIcA7j0Q5$50i6HXAnmfbf/fbPKBJaInBfnxMXe7kuccHxFIxZd0DqpoTx75PXdkg8NKqI3vsXAzqCUoGSR2WE9J/8vPqrA1
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -198,13 +189,12 @@
   ansible.builtin.user:
     append: false
     comment: Micheal Bear,,,
-    create_home: true
     generate_ssh_key: false
     group: mbear
     groups: users
     name: mbear
-    password: '$6$gdvpDeTr9OMvfuk6$684boeZbYQ5NKcaM/IzSq5mJa1ft7Pu1M7zsW8OHiuOtFC3bDGwnVxUBEBNtw8mybDvPgf.vWCYWBIc1GzJ7B0'
-    shell: '/usr/bin/bash'
+    password: $6$gdvpDeTr9OMvfuk6$684boeZbYQ5NKcaM/IzSq5mJa1ft7Pu1M7zsW8OHiuOtFC3bDGwnVxUBEBNtw8mybDvPgf.vWCYWBIc1GzJ7B0
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -219,13 +209,12 @@
   ansible.builtin.user:
     append: false
     comment: Param Kapur,,,
-    create_home: true
     generate_ssh_key: false
     group: paramkapur
     groups: users
     name: paramkapur
-    password: '$6$YO8O.Fa1CSGMCdHZ$8/ijuA/aSZ7RMWCwiLWFxvO5kfMk4uZQwuDxXygg6i3B.dWyp7iEgtKvnUtLWzq6JuYltT5kJyI6E2zf39fs00'
-    shell: '/usr/bin/bash'
+    password: $6$YO8O.Fa1CSGMCdHZ$8/ijuA/aSZ7RMWCwiLWFxvO5kfMk4uZQwuDxXygg6i3B.dWyp7iEgtKvnUtLWzq6JuYltT5kJyI6E2zf39fs00
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -240,13 +229,12 @@
   ansible.builtin.user:
     append: false
     comment: B Smith,,,
-    create_home: true
     generate_ssh_key: false
     group: bsmith
     groups: users
     name: bsmith
-    password: '$y$j9T$kH3DkHKI8t6kUHTgz3GpX1$8tMUxobm4xKf4VNnIbNLK/9zIDC.f2ES3iazRs0IQL6'
-    shell: '/usr/bin/bash'
+    password: $y$j9T$kH3DkHKI8t6kUHTgz3GpX1$8tMUxobm4xKf4VNnIbNLK/9zIDC.f2ES3iazRs0IQL6
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -261,13 +249,12 @@
   ansible.builtin.user:
     append: false
     comment: Franklin You,,,
-    create_home: true
     generate_ssh_key: false
     group: yyou
     groups: users
     name: yyou
-    password: '$y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC'
-    shell: '/usr/bin/bash'
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create
@@ -282,13 +269,12 @@
   ansible.builtin.user:
     append: false
     comment: Leland Russell,,,
-    create_home: true
     generate_ssh_key: false
     group: lrussell
     groups: users
     name: lrussell
-    password: '$y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC'
-    shell: '/usr/bin/bash'
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
     state: present
     system: false
     update_password: on_create

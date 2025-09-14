@@ -57,32 +57,8 @@ Perhaps we only want to update dev shells in between semesters, so that they are
     ```
 
     Using our example, this gives `$6$e0A7MR6aAnL3r9Y5$WevmaiUlUo6p67OErBd8.krTCTg/36EnNrpj8zUJKNWwIn3L7MqSmc3rOPupmajxJQ9z3N9Hsg7x9GaZfeVZr.`
-4. Add user and group entries to `users/users.yaml`
-
-    ```yaml
-    - name: Synchronize group 'sam'
-      become: true
-      ansible.builtin.group:
-        name: sam
-        state: present
-        system: false
-    - name: Synchronize user 'sam'
-      become: true
-      ansible.builtin.user:
-        append: false
-        comment: Samasaur1,,,
-        create_home: true
-        generate_ssh_key: false
-        group: sam
-        groups: users
-        name: sam
-        password: '$6$e0A7MR6aAnL3r9Y5$WevmaiUlUo6p67OErBd8.krTCTg/36EnNrpj8zUJKNWwIn3L7MqSmc3rOPupmajxJQ9z3N9Hsg7x9GaZfeVZr.'
-        shell: '/usr/bin/bash'
-        state: present
-        system: false
-        update_password: on_create
-    ```
-
+4. Add entries to `users/genUserConf.py`
+5. Run `genUsersConf.py` and redirect output to `users.yaml`.
 5. [Run the Ansible playbook](#running-the-playbook)
 
 ## Coder
