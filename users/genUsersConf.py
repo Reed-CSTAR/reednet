@@ -51,7 +51,7 @@ USERS: list[User] = [
         User('doranp', 'Doran Penner'),
         User('milesc', 'Miles Churchland'),
         User('mniederman', 'Max Niederman'),
-        User('tristanf', 'Tristan Yikes'),
+        User('tristanf', 'Tristan Figueroa-Reid'),
         User('araney', 'Aoife Raney'),
         User('yiyuanli', 'Yi Yuanli'),
         User('atali', 'Tali Auster'),
