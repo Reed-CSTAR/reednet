@@ -8,6 +8,7 @@ These are premade environments that provide all the software used in CS classes.
 ```bash
 nix develop polytopia#cs221
 ```
+
 On your own machine (if Nix is installed), you can access them via
 ```bash
 nix develop github:Samasaur1/polytopia#cs384
