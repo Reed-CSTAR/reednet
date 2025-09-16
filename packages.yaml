@@ -24,7 +24,13 @@
       - vim
       - neovim
       - emacs
+      - libcurses-perl
       - python3-inotify
       - python3-yaml
     update_cache: true
     cache_valid_time: 3600
+- name: Install Perl stuff :(
+  become: true
+  # We need this for asciiquarium
+  ansible.builtin.shell:
+    cmd: printf -n 'yes\nsudo\n' | cpan Term::Animation

@@ -74,6 +74,15 @@
         owner: 'root'
         mode: '555'
 
+    - name: Install asciiquarium
+      become: true
+      ansible.builtin.get_url:
+        url: 'https://raw.githubusercontent.com/cmatsuoka/asciiquarium/refs/heads/master/asciiquarium'
+        dest: '/usr/local/bin/asciiquarium'
+        group: 'root'
+        owner: 'root'
+        mode: '555'
+
     - name: Trust Polly's SSH key
       become: true
       ansible.posix.authorized_key:
