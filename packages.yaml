@@ -35,4 +35,11 @@
   become: true
   # We need this for asciiquarium
   ansible.builtin.shell:
-    cmd: printf -n 'yes\nsudo\n' | cpan Term::Animation
+    cmd: |
+      set -eo pipefail
+      printf -n 'yes\nsudo\n' | cpan Term::Animation
+
+  # This isn't all that useful. ansible-lint wants us to make sure we're
+  # looking at the output, though.
+  register: cpan_result
+  changed_when: cpan_result.output == 0
