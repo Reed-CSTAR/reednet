@@ -119,3 +119,34 @@
   tasks:
     - name: Synchronize users.
       ansible.builtin.import_tasks: ./users/users.yaml
+
+- name: Set MOTDs.
+  hosts: all
+  tasks:
+    - name: Set patty MOTD.
+      when: ansible_hostname == 'patty'
+      become: true
+      ansible.builtin.copy:
+        src: './motds/patty.sh'
+        dest: '/etc/update-motd.d/48-ascii-art'
+        group: 'root'
+        mode: '555'
+        owner: 'root'
+    - name: Set polly MOTD.
+      when: ansible_hostname == 'polly'
+      become: true
+      ansible.builtin.copy:
+        src: './motds/polly.sh'
+        dest: '/etc/update-motd.d/48-ascii-art'
+        group: 'root'
+        mode: '555'
+        owner: 'root'
+    - name: Set peggy MOTD.
+      when: ansible_hostname == 'peggy'
+      become: true
+      ansible.builtin.copy:
+        src: './motds/peggy.sh'
+        dest: '/etc/update-motd.d/48-ascii-art'
+        group: 'root'
+        mode: '555'
+        owner: 'root'
