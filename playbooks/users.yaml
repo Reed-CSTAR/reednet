@@ -4,4 +4,3 @@
   tasks:
     - name: Synchronize users.
       ansible.builtin.import_tasks: ../users/users.yaml
-
