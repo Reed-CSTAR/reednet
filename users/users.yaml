@@ -318,3 +318,23 @@
     state: present
     system: false
     update_password: on_create
+- name: Synchronize group 'link'
+  become: true
+  ansible.builtin.group:
+    name: link
+    state: present
+    system: false
+- name: Synchronize user 'link'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Kaishin Lin,,,
+    generate_ssh_key: false
+    group: link
+    groups: users
+    name: link
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
+    state: present
+    system: false
+    update_password: on_create
