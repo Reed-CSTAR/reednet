@@ -114,12 +114,6 @@
         mode: '644'
         owner: 'root'
 
-- name: Synchronize users.
-  hosts: all
-  tasks:
-    - name: Synchronize users.
-      ansible.builtin.import_tasks: ./users/users.yaml
-
 - name: Set MOTDs.
   hosts: all
   tasks:

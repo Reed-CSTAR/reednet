@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/playbook.json
+- name: Synchronize users.
+  hosts: all
+  tasks:
+    - name: Synchronize users.
+      ansible.builtin.import_tasks: ../users/users.yaml
+
