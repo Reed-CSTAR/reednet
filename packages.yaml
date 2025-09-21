@@ -1,5 +1,35 @@
 # yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/tasks.json
 
+- name: Install vs-codium keyring
+  become: true
+  ansible.builtin.copy:
+    src: './vscodium-deb-rpm-repo-pub.gpg'
+    dest: '/usr/share/keyrings/vscodium-archive-keyring.gpg'
+    group: 'root'
+    owner: 'root'
+    mode: '644'
+
+  when: inventory_hostname in groups['guis']
+
+- name: Add vs codium repository
+  become: true
+  ansible.builtin.deb822_repository:
+    name: vscodium
+    uris: https://download.vscodium.com/debs
+    suites: vscodium
+    components: main
+    signed_by: '/usr/share/keyrings/vscodium-archive-keyring.gpg'
+
+  when: inventory_hostname in groups['guis']
+
+- name: Install VS code on GUI hosts
+  become: true
+  ansible.builtin.apt:
+    pkg: codium
+    update_cache: true
+
+  when: inventory_hostname in groups['guis']
+
 - name: Synchronize globally installed dpkgs
   become: true
   ansible.builtin.apt:
