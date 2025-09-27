@@ -75,6 +75,15 @@
         owner: 'root'
         mode: '555'
 
+    - name: Install pwchange
+      become: true
+      ansible.builtin.copy:
+        src: './passwidget/pwchange'
+        dest: '/usr/local/bin/pwchange'
+        group: 'root'
+        owner: 'root'
+        mode: 'u=rxs,g=rx,o=rx'
+
     - name: Install asciiquarium
       become: true
       ansible.builtin.get_url:
