@@ -338,3 +338,63 @@
     state: present
     system: false
     update_password: on_create
+- name: Synchronize group 'kiaravyas'
+  become: true
+  ansible.builtin.group:
+    name: kiaravyas
+    state: present
+    system: false
+- name: Synchronize user 'kiaravyas'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Kiara Vyas,,,
+    generate_ssh_key: false
+    group: kiaravyas
+    groups: users
+    name: kiaravyas
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
+    state: present
+    system: false
+    update_password: on_create
+- name: Synchronize group 'kcowger'
+  become: true
+  ansible.builtin.group:
+    name: kcowger
+    state: present
+    system: false
+- name: Synchronize user 'kcowger'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Kellyn Cowger,,,
+    generate_ssh_key: false
+    group: kcowger
+    groups: users
+    name: kcowger
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
+    state: present
+    system: false
+    update_password: on_create
+- name: Synchronize group 'ksaksena'
+  become: true
+  ansible.builtin.group:
+    name: ksaksena
+    state: present
+    system: false
+- name: Synchronize user 'ksaksena'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Atlas K Saksena,,,
+    generate_ssh_key: false
+    group: ksaksena
+    groups: users
+    name: ksaksena
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
+    state: present
+    system: false
+    update_password: on_create
