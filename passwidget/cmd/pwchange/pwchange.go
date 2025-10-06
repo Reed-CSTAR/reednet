@@ -121,6 +121,8 @@ func main() {
 		log.Fatalf("failed to write to new temp shadow: %v", err)
 	}
 
+	new_shadow_bufwr.Flush()
+
 	if err := os.Rename(new_shadow_file.Name(), "/etc/shadow"); err != nil {
 		log.Fatalf("failed to copy over old shadow: %v", err)
 	}
