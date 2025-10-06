@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSTAR Credential Service</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				margin: 0;
+			}
+			header {
+				width: calc(100% - 2 * 10px);
+				border-bottom: 1px solid black;
+				padding: 10px;
+			}
+
+			main, h1 {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 8.5in;
+			}
+
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+
+			form > * {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				justify-content: space-between;
+				margin-top: 5px;
+			}
+
+			input[type="submit"] {
+				font-family: inherit;
+				font-size: inherit;
+				margin-top: 10px;
+			}
+
+			p.err {
+				width: calc(100% - 2 * 10px);
+				background-color: #d9d2d2;
+				color: #951b1b;
+				padding: 10px;
+			}
+
+			p.success {
+				width: calc(100% - 2 * 10px);
+				background-color: #d9d2d2;
+				color: #41573b;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>CSTAR Credential Service</h1>
+		</header>
+		<main>
+			<p>
+			  Use this form to update your password on Reed
+			  machines. Completing this form will change the
+			  password recognized by by any machine or service
+			  operated by CSTAR. It will not affect your usual
+			  Kerberos login.
+			</p>
+			
+			{{ if (.Error) }}
+			<p class="err">{{ .Error }}</p>
+			{{ end }}
+
+			{{ if (.Success) }}
+			<p class="success">Password successfully changed! This update will propagate to all machines within a minute.</p>
+			{{ end }}
+
+			<form action="/pwwidget" method="post">
+				<div class="input-pair" required>
+					<label>Username:</label>
+					<input type="text" name="user"></input>
+				</div>
+				<div class="input-pair" required>
+					<label>Current password:</label>
+					<input type="password" name="current"></input>
+				</div>
+
+				<div class="input-pair" required>
+					<label>New password:</label>
+					<input type="password" name="new"></input>
+				</div>
+
+				<input type="submit" value="Submit"/>
+			</form>
+
+			<p>If you have any issues logging into or using our machines,
+			please contact <a
+			href="mailto:CSTAR@groups.reed.edu">CSTAR</a>.
+		</main>
+	</body>
+</html>
