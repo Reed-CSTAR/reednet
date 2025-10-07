@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/playbook.json
-- name: Synchronize reednet computers
+- name: Install reednet-specific software
   hosts: all
   tasks:
     - name: Install poly-authelia-users-from-shadow
       become: true
       ansible.builtin.copy:
-        src: './scripts/authelia-users-from-shadow.py'
+        src: '../scripts/authelia-users-from-shadow.py'
         dest: '/usr/local/bin/poly-authelia-users-from-shadow'
         group: 'root'
         owner: 'root'
@@ -14,7 +14,7 @@
     - name: Install poly-shadow-substitute-hash
       become: true
       ansible.builtin.copy:
-        src: './scripts/shadow-substitute-hash.py'
+        src: '../scripts/shadow-substitute-hash.py'
         dest: '/usr/local/bin/poly-shadow-substitute-hash'
         group: 'root'
         owner: 'root'
@@ -23,7 +23,7 @@
     - name: Install poly-shadow-syncd
       become: true
       ansible.builtin.copy:
-        src: './scripts/shadow-syncd.py'
+        src: '../scripts/shadow-syncd.py'
         dest: '/usr/local/bin/poly-shadow-syncd'
         group: 'root'
         owner: 'root'
@@ -32,7 +32,7 @@
     - name: Install pwchange
       become: true
       ansible.builtin.copy:
-        src: './passwidget/pwchange'
+        src: '../passwidget/pwchange'
         dest: '/usr/local/bin/pwchange'
         group: 'root'
         owner: 'root'
@@ -41,15 +41,8 @@
     - name: Install pwwidget
       become: true
       ansible.builtin.copy:
-        src: './passwidget/pwwidget'
+        src: '../passwidget/pwwidget'
         dest: '/usr/local/bin/pwwidget'
         group: 'root'
         owner: 'root'
         mode: 'u=rx,g=rx,o=rx'
-
-    - name: Trust Polly's SSH key
-      become: true
-      ansible.posix.authorized_key:
-        user: root
-        state: present
-        key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
