@@ -33,14 +33,12 @@ Perhaps we only want to update dev shells in between semesters, so that they are
 
 ### Ansible configuration
 
-##### Running the playbook
+There are multiple playbooks provided in `playbooks/` to configure various
+aspects of the inventory. They can be run with a command like this:
 
-1. Install Ansible (you can launch a subshell that provides Ansible via `nix develop`)
-2. Run the playbook, either with `poly-run-ansible` in the Nix shell, or by
-   manually invoking
-    ```bash
-    ansible-playbook -i inventory.yaml playbook.yaml -K -k -u polytopia
-    ```
+```bash
+ansible-playbook -Kk -u polytopia -i inventory.yaml <path-to-playbook.yaml>
+```
 
 ##### Adding users
 
