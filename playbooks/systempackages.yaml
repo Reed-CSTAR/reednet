@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/tasks.json
+- name: Install system packages
+  hosts: all
+  tasks:
+    - name: Install vs-codium keyring
+      become: true
+      ansible.builtin.copy:
+        src: './vscodium-deb-rpm-repo-pub.gpg'
+        dest: '/usr/share/keyrings/vscodium-archive-keyring.gpg'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
+      when: inventory_hostname in groups['guis']
+    - name: Add vs codium repository
+      become: true
+      ansible.builtin.deb822_repository:
+        name: vscodium
+        uris: https://download.vscodium.com/debs
+        suites: vscodium
+        components: main
+        signed_by: '/usr/share/keyrings/vscodium-archive-keyring.gpg'
+      when: inventory_hostname in groups['guis']
+    - name: Install VS code on GUI hosts
+      become: true
+      ansible.builtin.apt:
+        pkg: codium
+        update_cache: true
+      when: inventory_hostname in groups['guis']
+    - name: Synchronize globally installed dpkgs
+      become: true
+      ansible.builtin.apt:
+        pkg:
+          - curl
+          - micro
+          - git
+          - openssh-server
+          - openssh-client
+          - kitty-terminfo
+          - ripgrep
+          - eza
+          - bat
+          - btop
+          - hyfetch
+          - python3
+          - python3.12-venv
+          - fish
+          - zsh
+          - bash
+          - gcc
+          - g++
+          - clang
+          - vim
+          - neovim
+          - emacs
+          - libcurses-perl
+          - python3-inotify
+          - python3-yaml
+        update_cache: true
+        cache_valid_time: 3600
+    - name: Install asciiquarium
+      become: true
+      ansible.builtin.get_url:
+        url: 'https://raw.githubusercontent.com/cmatsuoka/asciiquarium/refs/heads/master/asciiquarium'
+        dest: '/usr/local/bin/asciiquarium'
+        group: 'root'
+        owner: 'root'
+        mode: '555'

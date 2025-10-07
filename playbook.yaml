@@ -2,9 +2,6 @@
 - name: Synchronize reednet computers
   hosts: all
   tasks:
-    - name: Synchronize globally installed packages.
-      ansible.builtin.import_tasks: packages.yaml
-
     - name: Install poly-authelia-users-from-shadow
       become: true
       ansible.builtin.copy:
@@ -50,41 +47,9 @@
         owner: 'root'
         mode: 'u=rx,g=rx,o=rx'
 
-    - name: Install asciiquarium
-      become: true
-      ansible.builtin.get_url:
-        url: 'https://raw.githubusercontent.com/cmatsuoka/asciiquarium/refs/heads/master/asciiquarium'
-        dest: '/usr/local/bin/asciiquarium'
-        group: 'root'
-        owner: 'root'
-        mode: '555'
-
     - name: Trust Polly's SSH key
       become: true
       ansible.posix.authorized_key:
         user: root
         state: present
         key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
-
-- name: Disable password changing on applicable hosts
-  hosts: all:!shadowsource
-  tasks:
-    - name: Override passwd
-      become: true
-      ansible.builtin.copy:
-        src: './scripts/passwd.sh'
-        dest: '/usr/local/bin/passwd'
-        group: 'root'
-        owner: 'root'
-        mode: '555'
-
-    # This is literally the best way to disable password changing from the GNOME GUI.
-    - name: Disable GNOME System Settings Panel
-      become: true
-      ansible.builtin.copy:
-        content: |
-          # See Ansible playbook :)
-        dest: '/usr/share/applications/gnome-system-panel.desktop'
-        group: 'root'
-        mode: '644'
-        owner: 'root'
