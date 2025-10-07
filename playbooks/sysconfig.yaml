@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/playbook.json
+# While all of the playbooks are broadly responsible for configuring the
+# systems, this in particular addresses one-time, persistent configuration
+# (unlike, e.g., packages which need to be updated or cosmetic features we
+# may change frequently).
+- name: Configure systems
+  hosts: all
+  tasks:
+    - name: Ensure SSH accepts env vars
+      become: true
+      ansible.builtin.copy:
+        content: |
+          AcceptEnv COLORTERM
+          AcceptEnv DARKMODE
+        dest: '/etc/ssh/sshd_config.d/10-sam-accept-env.conf'
+        group: 'root'
+        mode: '644'
+        owner: 'root'
+
+    - name: Set system flake registry
+      become: true
+      ansible.builtin.copy:
+        src: './registry.json'
+        dest: '/etc/nix/registry.json'
+        owner: 'root'
+        group: 'root'
+        mode: '644'
+
+    # If we need custom certs again, Firefox needs them specially configured here.
+    - name: Ensure /etc/firefox/policies exists.
+      become: true
+      ansible.builtin.file:
+        path: '/etc/firefox/policies/'
+        state: 'directory'
+        owner: 'root'
+        group: 'root'
+        mode: '0755'
+
+    # Do nothing for now.
+    - name: Set Firefox policies.json
+      become: true
+      ansible.builtin.copy:
+        dest: '/etc/firefox/policies/policies.json'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
+        content: |
+          {
+            "policies": {}
+          }
+
+    - name: Trust Polly's SSH key
+      become: true
+      ansible.posix.authorized_key:
+        user: root
+        state: present
+        key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
+
+
+- name: Disable password changing on applicable hosts
+  hosts: all:!shadowsource
+  tasks:
+    - name: Override passwd
+      become: true
+      ansible.builtin.copy:
+        src: '../scripts/passwd.sh'
+        dest: '/usr/local/bin/passwd'
+        group: 'root'
+        owner: 'root'
+        mode: '555'
+
+    # This is literally the best way to disable password changing from the GNOME GUI.
+    - name: Disable GNOME System Settings Panel
+      become: true
+      ansible.builtin.copy:
+        content: |
+          # See Ansible playbook :)
+        dest: '/usr/share/applications/gnome-system-panel.desktop'
+        group: 'root'
+        mode: '644'
+        owner: 'root'

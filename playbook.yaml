@@ -2,49 +2,6 @@
 - name: Synchronize reednet computers
   hosts: all
   tasks:
-    - name: Ensure SSH accepts env vars
-      become: true
-      ansible.builtin.copy:
-        content: |
-          AcceptEnv COLORTERM
-          AcceptEnv DARKMODE
-        dest: '/etc/ssh/sshd_config.d/10-sam-accept-env.conf'
-        group: 'root'
-        mode: '644'
-        owner: 'root'
-
-    - name: Set system flake registry
-      become: true
-      ansible.builtin.copy:
-        src: './registry.json'
-        dest: '/etc/nix/registry.json'
-        owner: 'root'
-        group: 'root'
-        mode: '644'
-
-    # If we need custom certs again, Firefox needs them specially configured here.
-    - name: Ensure /etc/firefox/policies exists.
-      become: true
-      ansible.builtin.file:
-        path: '/etc/firefox/policies/'
-        state: 'directory'
-        owner: 'root'
-        group: 'root'
-        mode: '0755'
-
-    # Do nothing for now.
-    - name: Set Firefox policies.json
-      become: true
-      ansible.builtin.copy:
-        dest: '/etc/firefox/policies/policies.json'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
-        content: |
-          {
-            "policies": {}
-          }
-
     - name: Synchronize globally installed packages.
       ansible.builtin.import_tasks: packages.yaml
 
