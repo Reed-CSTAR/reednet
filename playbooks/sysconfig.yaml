@@ -56,6 +56,14 @@
         state: present
         key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
 
+    - name: Trust Reednet SSH keys
+      become: true
+      ansible.builtin.copy:
+        dest: '/etc/ssh/ssh_known_hosts'
+        src: 'ssh_known_hosts'
+        group: 'root'
+        owner: 'root'
+        mode: '644'
 
 - name: Disable password changing on applicable hosts
   hosts: all:!shadowsource
