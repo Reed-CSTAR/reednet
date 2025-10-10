@@ -398,3 +398,23 @@
     state: present
     system: false
     update_password: on_create
+- name: Synchronize group 'manuklein'
+  become: true
+  ansible.builtin.group:
+    name: manuklein
+    state: present
+    system: false
+- name: Synchronize user 'manuklein'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Manu Klein,,,
+    generate_ssh_key: false
+    group: manuklein
+    groups: users
+    name: manuklein
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
+    state: present
+    system: false
+    update_password: on_create
