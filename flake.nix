@@ -75,6 +75,11 @@
         ) (builtins.readDir ./devShells)
       );
 
+      nixosConfigurations.quatsch = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	modules = [ ./quatsch ];
+      };
+
       formatter = define (pkgs: pkgs.nixfmt);
     };
 }
