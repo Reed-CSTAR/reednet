@@ -28,8 +28,7 @@
     };
 
     backups = {
-      isSystemUser = true;
-      group = "users";
+      isNormalUser = true;
 
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH6mCbSIO2ryykiSGoHknxi+Bs3UAaCoJVao4IKNeVAb root@patty"
