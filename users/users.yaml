@@ -418,3 +418,23 @@
     state: present
     system: false
     update_password: on_create
+- name: Synchronize group 'djmatthisen'
+  become: true
+  ansible.builtin.group:
+    name: djmatthisen
+    state: present
+    system: false
+- name: Synchronize user 'djmatthisen'
+  become: true
+  ansible.builtin.user:
+    append: false
+    comment: Dylan Matthisen,,,
+    generate_ssh_key: false
+    group: djmatthisen
+    groups: users
+    name: djmatthisen
+    password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
+    shell: /usr/bin/bash
+    state: present
+    system: false
+    update_password: on_create
