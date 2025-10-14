@@ -11,7 +11,9 @@
     comment: Connor Gilligan,,,
     generate_ssh_key: false
     group: cgilligan
-    groups: users
+    groups:
+    - users
+    - docker
     name: cgilligan
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/fish
@@ -31,7 +33,9 @@
     comment: Doran Penner,,,
     generate_ssh_key: false
     group: doranp
-    groups: users
+    groups:
+    - users
+    - docker
     name: doranp
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -51,7 +55,9 @@
     comment: Miles Churchland,,,
     generate_ssh_key: false
     group: milesc
-    groups: users
+    groups:
+    - users
+    - docker
     name: milesc
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -71,7 +77,9 @@
     comment: Max Niederman,,,
     generate_ssh_key: false
     group: mniederman
-    groups: users
+    groups:
+    - users
+    - docker
     name: mniederman
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -91,7 +99,9 @@
     comment: Tristan Figueroa-Reid,,,
     generate_ssh_key: false
     group: tristanf
-    groups: users
+    groups:
+    - users
+    - docker
     name: tristanf
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -111,7 +121,9 @@
     comment: Aoife Raney,,,
     generate_ssh_key: false
     group: araney
-    groups: users
+    groups:
+    - users
+    - docker
     name: araney
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -131,7 +143,9 @@
     comment: Yi Yuanli,,,
     generate_ssh_key: false
     group: yiyuanli
-    groups: users
+    groups:
+    - users
+    - docker
     name: yiyuanli
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -151,7 +165,9 @@
     comment: Tali Auster,,,
     generate_ssh_key: false
     group: atali
-    groups: users
+    groups:
+    - users
+    - docker
     name: atali
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -171,7 +187,9 @@
     comment: Duncan Stewardson,,,
     generate_ssh_key: false
     group: dstewardson
-    groups: users
+    groups:
+    - users
+    - docker
     name: dstewardson
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -191,7 +209,9 @@
     comment: Michael Bear,,,
     generate_ssh_key: false
     group: mbear
-    groups: users
+    groups:
+    - users
+    - docker
     name: mbear
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -211,7 +231,9 @@
     comment: Param Kapur,,,
     generate_ssh_key: false
     group: paramkapur
-    groups: users
+    groups:
+    - users
+    - docker
     name: paramkapur
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -231,7 +253,9 @@
     comment: B Smith,,,
     generate_ssh_key: false
     group: bsmith
-    groups: users
+    groups:
+    - users
+    - docker
     name: bsmith
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -251,7 +275,9 @@
     comment: Franklin You,,,
     generate_ssh_key: false
     group: yyou
-    groups: users
+    groups:
+    - users
+    - docker
     name: yyou
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -271,7 +297,9 @@
     comment: Leland Russell,,,
     generate_ssh_key: false
     group: lrussell
-    groups: users
+    groups:
+    - users
+    - docker
     name: lrussell
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -291,7 +319,9 @@
     comment: Victor Laczay,,,
     generate_ssh_key: false
     group: victorl
-    groups: users
+    groups:
+    - users
+    - docker
     name: victorl
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -311,7 +341,9 @@
     comment: Ula Shipman,,,
     generate_ssh_key: false
     group: ulas
-    groups: users
+    groups:
+    - users
+    - docker
     name: ulas
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -331,7 +363,9 @@
     comment: Kaishin Lin,,,
     generate_ssh_key: false
     group: link
-    groups: users
+    groups:
+    - users
+    - docker
     name: link
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -351,7 +385,9 @@
     comment: Kiara Vyas,,,
     generate_ssh_key: false
     group: kiaravyas
-    groups: users
+    groups:
+    - users
+    - docker
     name: kiaravyas
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -371,7 +407,9 @@
     comment: Kellyn Cowger,,,
     generate_ssh_key: false
     group: kcowger
-    groups: users
+    groups:
+    - users
+    - docker
     name: kcowger
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -391,7 +429,9 @@
     comment: Atlas K Saksena,,,
     generate_ssh_key: false
     group: ksaksena
-    groups: users
+    groups:
+    - users
+    - docker
     name: ksaksena
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -411,7 +451,9 @@
     comment: Manu Klein,,,
     generate_ssh_key: false
     group: manuklein
-    groups: users
+    groups:
+    - users
+    - docker
     name: manuklein
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -431,7 +473,9 @@
     comment: Dylan Matthisen,,,
     generate_ssh_key: false
     group: djmatthisen
-    groups: users
+    groups:
+    - users
+    - docker
     name: djmatthisen
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash

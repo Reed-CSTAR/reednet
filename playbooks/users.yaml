@@ -2,5 +2,10 @@
 - name: Synchronize users.
   hosts: all
   tasks:
+    - name: Add requisite group
+      become: true
+      ansible.builtin.group:
+        name: docker
+
     - name: Synchronize users.
       ansible.builtin.import_tasks: ../users/users.yaml
