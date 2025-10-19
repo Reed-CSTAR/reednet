@@ -69,6 +69,7 @@ USERS: list[User] = [
         User('ksaksena', 'Atlas K Saksena'),
         User('manuklein', 'Manu Klein'),
         User('djmatthisen', 'Dylan Matthisen'),
+        User('sorendstevens', 'Søren Stevens'),
 ]
 
 def main():
