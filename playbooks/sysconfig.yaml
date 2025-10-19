@@ -17,6 +17,13 @@
         mode: '644'
         owner: 'root'
 
+    - name: Make Quatsch accessible
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: |
+          10.133.7.116  quatsch
+
     - name: Set system flake registry
       become: true
       ansible.builtin.copy:
