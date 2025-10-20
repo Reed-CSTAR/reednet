@@ -21,8 +21,8 @@
       become: true
       ansible.builtin.lineinfile:
         path: /etc/hosts
-        line: |
-          10.133.7.116  quatsch
+        line: '10.133.7.116 quatsch'
+        regexp: 10.133.7.116\s+quatsch
 
     - name: Set system flake registry
       become: true
