@@ -111,13 +111,15 @@
         content: |
           [Unit]
           Description=Run borg backup of /var and /etc.
-          
+
           [Service]
           Type=oneshot
-          
+
           Environment="BORG_PASSCOMMAND=/bin/cat /var/borg-passphrase"
-          ExecStart=/bin/sh -c 'borg create -v --stats "ssh://backups@quatsch/home/backups/{{ ansible_hostname }}::$(date --iso-8601=minutes)" /var /etc --exclude /var/tmp'
-          
+          ExecStart=/bin/sh -c 'borg create -v --stats \
+            "ssh://backups@quatsch/home/backups/{{ ansible_hostname }}::$(date --iso-8601=minutes)" \
+            /var /etc --exclude /var/tmp'
+
           ReadOnlyPaths=/var /etc
           InaccessiblePaths=/home
     - name: Install backup timer
@@ -130,6 +132,6 @@
         content: |
           [Timer]
           OnCalendar=daily
-          
+
           [Install]
           WantedBy=multi-user.target
