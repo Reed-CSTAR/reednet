@@ -33,6 +33,12 @@
         group: 'root'
         mode: '644'
 
+    - name: Enable node_exporter
+      become: true
+      ansible.builtin.systemd_service:
+        name: prometheus-node-exporter
+        state: started
+
     # If we need custom certs again, Firefox needs them specially configured here.
     - name: Ensure /etc/firefox/policies exists.
       become: true
