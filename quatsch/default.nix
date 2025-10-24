@@ -38,11 +38,16 @@
   };
 
   environment.systemPackages = with pkgs; [
-    curl git neovim
+    curl git neovim borgbackup
   ];
 
   services.openssh.enable = true;
   services.tailscale.enable = true;
+
+  services.prometheus = {
+    enable = true;
+    exporters.node.enable = true;
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
