@@ -78,6 +78,30 @@
         owner: 'root'
         mode: '644'
 
+    - name: Configure Caddy on hosts
+      become: true
+      ansible.builtin.copy:
+        content: |
+          {{ inventory_hostname }} {
+            tls /var/lib/tls-cert/{{ inventory_hostname }}.cert /var/lib/tls-cert/{{ inventory_hostname }}.key
+            reverse_proxy /metrics localhost:9100
+
+            {% if inventory_hostname == 'polly.reed.edu' %}
+            reverse_proxy /pwwidget localhost:7497
+            reverse_proxy localhost:8000
+            {% endif %}
+          }
+        dest: '/etc/caddy/Caddyfile'
+        owner: 'caddy'
+        group: 'caddy'
+        mode: '600'
+
+    - name: Enable Caddy
+      become: true
+      ansible.builtin.systemd_service:
+        name: caddy
+        state: started
+
 - name: Disable password changing on applicable hosts
   hosts: all:!shadowsource
   tasks:

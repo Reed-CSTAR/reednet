@@ -57,6 +57,7 @@
           - python3-yaml
           - borgbackup
           - prometheus-node-exporter
+          - caddy
         update_cache: true
         cache_valid_time: 3600
     - name: Install asciiquarium
