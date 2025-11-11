@@ -90,6 +90,10 @@
             reverse_proxy /pwwidget localhost:7497
             reverse_proxy localhost:8000
             {% endif %}
+
+            {% if inventory_hostname == 'patty.reed.edu' %}
+            reverse_proxy localhost:5917
+            {% endif %}
           }
         dest: '/etc/caddy/Caddyfile'
         owner: 'caddy'
