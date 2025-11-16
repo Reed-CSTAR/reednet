@@ -43,6 +43,8 @@
 
   environment.systemPackages = with pkgs; [
     curl git neovim borgbackup
+
+    ghostty.terminfo
   ];
 
   services.openssh.enable = true;
