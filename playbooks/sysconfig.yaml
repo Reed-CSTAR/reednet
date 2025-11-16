@@ -78,6 +78,34 @@
         owner: 'root'
         mode: '644'
 
+    - name: Ensure TLS dir exists.
+      become: true
+      ansible.builtin.file:
+        path: '/var/lib/tls-cert'
+        state: 'directory'
+        owner: 'caddy'
+        group: 'caddy'
+        mode: '0700'
+
+
+    - name: Install TLS keys
+      become: true
+      ansible.builtin.copy:
+        src: '../certs/{{ inventory_hostname }}.key'
+        dest: '/var/lib/tls-cert/{{ inventory_hostname }}.key'
+        owner: caddy
+        group: caddy
+        mode: '400'
+
+    - name: Install TLS certs
+      become: true
+      ansible.builtin.copy:
+        src: '../certs/{{ inventory_hostname }}.cert'
+        dest: '/var/lib/tls-cert/{{ inventory_hostname }}.cert'
+        owner: caddy
+        group: caddy
+        mode: '400'
+
     - name: Configure Caddy on hosts
       become: true
       ansible.builtin.copy:
