@@ -37,6 +37,11 @@
     };
   };
 
+  environment.variables = rec {
+    EDITOR = "nvim";
+    VISUAL = EDITOR;
+  };
+
   environment.systemPackages = with pkgs; [
     curl git neovim borgbackup
 
