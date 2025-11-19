@@ -54,6 +54,22 @@
   services.prometheus = {
     enable = true;
     exporters.node.enable = true;
+
+    scrapeConfigs = [{
+      job_name = "scrape_jobs";
+      static_configs = [{
+        targets = [
+          "localhost:9100"
+          "patty.reed.edu"
+          "peggy.reed.edu"
+          "polly.reed.edu"
+          "banku.reed.edu"
+          "empanada.reed.edu"
+          "gyoza.reed.edu"
+          "pierogi.reed.edu"
+        ];
+      }];
+    }];
   };
 
   security.pki.certificateFiles = builtins.filter
