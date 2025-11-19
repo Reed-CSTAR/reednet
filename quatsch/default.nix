@@ -56,5 +56,8 @@
     exporters.node.enable = true;
   };
 
+  security.pki.certificateFiles = builtins.filter
+    (lib.hasSuffix ".cert") (lib.filesystem.listFilesRecursive ../certs);
+
   system.stateVersion = "25.05"; # Did you read the comment?
 }
