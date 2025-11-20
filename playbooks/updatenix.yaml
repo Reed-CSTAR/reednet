@@ -7,7 +7,9 @@
       ansible.builtin.command:
         # We have to run bash as a login shell (`-l`) to get it to source
         # /etc/bash.bashrc (in which we can find nix-required environment
-        # variables). 
+        # variables).
         cmd: |
           bash -l -c 'nix upgrade-nix'
-
+      register: out
+      changed_when: out.rc == 0
+      failed_when: out.rc != 0
