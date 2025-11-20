@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/playbook.json
+- name: Update nix
+  hosts: all
+  tasks:
+    - name: Run upgrade-nix
+      become: true
+      ansible.builtin.command:
+        # We have to run bash as a login shell (`-l`) to get it to source
+        # /etc/bash.bashrc (in which we can find nix-required environment
+        # variables). 
+        cmd: |
+          bash -l -c 'nix upgrade-nix'
+
