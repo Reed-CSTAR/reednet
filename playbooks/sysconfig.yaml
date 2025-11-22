@@ -134,6 +134,28 @@
         name: caddy
         state: started
 
+    - name: Enable apt upgrades
+      become: true
+      ansible.builtin.copy:
+        dest: /etc/apt/apt.conf.d/50unattended-upgrades
+        group: 'root'
+        owner: 'root'
+        mode: '444'
+        content: |
+          Unattended-Upgrade::Allowed-Origins {
+                  "${distro_id}:${distro_codename}";
+                  "${distro_id}:${distro_codename}-security";
+                  "${distro_id}ESMApps:${distro_codename}-apps-security";
+                  "${distro_id}ESM:${distro_codename}-infra-security";
+                  "${distro_id}:${distro_codename}-updates";
+          };
+
+          // Python regular expressions, matching packages to exclude from upgrading
+          Unattended-Upgrade::Package-Blacklist {
+          };
+
+          Unattended-Upgrade::DevRelease "auto";
+
 - name: Disable password changing on applicable hosts
   hosts: all:!shadowsource
   tasks:
