@@ -1,5 +1,8 @@
 # yaml-language-server: $schema=https://github.com/ansible/ansible-lint/raw/refs/heads/main/src/ansiblelint/schemas/playbook.json
-- name: Update nix
+#
+# This playbook applies periodic updates. We rely on unattended upgrades on the
+# Ubuntu machines and manual intervention on the NixOS machines.
+- name: Apply some updates
   hosts: all
   tasks:
     - name: Run upgrade-nix
@@ -13,3 +16,11 @@
       register: out
       changed_when: out.rc == 0
       failed_when: out.rc != 0
+    - name: Check for systems that require a reboot
+      ansible.builtin.command: find -L /var/run -maxdepth 1 -wholename /var/run/reboot-required
+      register: reboot_required
+      changed_when: false
+    - name: Reboot systems when required
+      when: reboot_required.stdout != ""
+      become: true
+      ansible.builtin.reboot:
