@@ -13,7 +13,6 @@
     group: cgilligan
     groups:
     - users
-    - docker
     name: cgilligan
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/fish
@@ -35,7 +34,6 @@
     group: doranp
     groups:
     - users
-    - docker
     name: doranp
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -57,7 +55,6 @@
     group: milesc
     groups:
     - users
-    - docker
     name: milesc
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -79,7 +76,6 @@
     group: mniederman
     groups:
     - users
-    - docker
     name: mniederman
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -101,7 +97,6 @@
     group: tristanf
     groups:
     - users
-    - docker
     name: tristanf
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -123,7 +118,6 @@
     group: araney
     groups:
     - users
-    - docker
     name: araney
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -145,7 +139,6 @@
     group: yiyuanli
     groups:
     - users
-    - docker
     name: yiyuanli
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -167,7 +160,6 @@
     group: atali
     groups:
     - users
-    - docker
     name: atali
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -189,7 +181,6 @@
     group: dstewardson
     groups:
     - users
-    - docker
     name: dstewardson
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -211,7 +202,6 @@
     group: mbear
     groups:
     - users
-    - docker
     name: mbear
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -233,7 +223,6 @@
     group: paramkapur
     groups:
     - users
-    - docker
     name: paramkapur
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -255,7 +244,6 @@
     group: bsmith
     groups:
     - users
-    - docker
     name: bsmith
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -277,7 +265,6 @@
     group: yyou
     groups:
     - users
-    - docker
     name: yyou
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -299,7 +286,6 @@
     group: lrussell
     groups:
     - users
-    - docker
     name: lrussell
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -321,7 +307,6 @@
     group: victorl
     groups:
     - users
-    - docker
     name: victorl
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -343,7 +328,6 @@
     group: ulas
     groups:
     - users
-    - docker
     name: ulas
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -365,7 +349,6 @@
     group: link
     groups:
     - users
-    - docker
     name: link
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -387,7 +370,6 @@
     group: kiaravyas
     groups:
     - users
-    - docker
     name: kiaravyas
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -409,7 +391,6 @@
     group: kcowger
     groups:
     - users
-    - docker
     name: kcowger
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -431,7 +412,6 @@
     group: ksaksena
     groups:
     - users
-    - docker
     name: ksaksena
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -453,7 +433,6 @@
     group: manuklein
     groups:
     - users
-    - docker
     name: manuklein
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -475,7 +454,6 @@
     group: djmatthisen
     groups:
     - users
-    - docker
     name: djmatthisen
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -497,7 +475,6 @@
     group: sorendstevens
     groups:
     - users
-    - docker
     name: sorendstevens
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash
@@ -519,7 +496,6 @@
     group: mjaram
     groups:
     - users
-    - docker
     name: mjaram
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
     shell: /usr/bin/bash

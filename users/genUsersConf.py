@@ -35,7 +35,7 @@ class User:
                     'comment': f'{self.name},,,',
                     'generate_ssh_key': False,
                     'group': f'{self.username}',
-                    'groups': ['users', 'docker'],
+                    'groups': ['users'],
                     'name': f'{self.username}',
                     'password': f'{self.hashed_password}',
                     'shell': f'{self.shell}',
