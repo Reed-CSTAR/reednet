@@ -36,7 +36,7 @@
     - users
     name: doranp
     password: $y$jD5$wx3m2yO2DXf/AH1oR.b6f/$urFY/uK3kXOpdT.6.Kyw9gsNzYCZzqIG/oZaFsbX2UC
-    shell: /usr/bin/bash
+    shell: /usr/bin/fish
     state: present
     system: false
     update_password: on_create

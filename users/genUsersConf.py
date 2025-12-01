@@ -48,7 +48,7 @@ class User:
 
 USERS: list[User] = [
         User('cgilligan', 'Connor Gilligan', shell='/usr/bin/fish'),
-        User('doranp', 'Doran Penner'),
+        User('doranp', 'Doran Penner', shell='/usr/bin/fish'),
         User('milesc', 'Miles Churchland'),
         User('mniederman', 'Max Niederman'),
         User('tristanf', 'Tristan Figueroa-Reid'),
