@@ -1,3 +1,4 @@
 .envrc
 /scripts/.venv
 /.ansible
+.direnv/
