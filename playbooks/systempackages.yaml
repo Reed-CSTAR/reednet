@@ -49,6 +49,7 @@
           - gcc
           - g++
           - clang
+          - cmake
           - vim
           - neovim
           - emacs
