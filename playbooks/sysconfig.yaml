@@ -148,6 +148,8 @@
                   "${distro_id}ESMApps:${distro_codename}-apps-security";
                   "${distro_id}ESM:${distro_codename}-infra-security";
                   "${distro_id}:${distro_codename}-updates";
+                  "Tailscale:${distro_codename}";
+                  "Authelia:${distro_codename}";
           };
 
           // Python regular expressions, matching packages to exclude from upgrading
