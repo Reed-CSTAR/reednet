@@ -123,6 +123,11 @@
             reverse_proxy localhost:5917
             {% endif %}
           }
+          {% if inventory_hostname == 'patty.reed.edu' %}
+          patty.reed.edu:4443 {
+            redir https://patty.reed.edu{uri} permanent
+          }
+          {% endif %}
         dest: '/etc/caddy/Caddyfile'
         owner: 'caddy'
         group: 'caddy'
