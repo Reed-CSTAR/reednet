@@ -12,26 +12,26 @@
         content: |
           AcceptEnv COLORTERM
           AcceptEnv DARKMODE
-        dest: '/etc/ssh/sshd_config.d/10-sam-accept-env.conf'
-        group: 'root'
-        mode: '644'
-        owner: 'root'
+        dest: "/etc/ssh/sshd_config.d/10-sam-accept-env.conf"
+        group: "root"
+        mode: "644"
+        owner: "root"
 
     - name: Make Quatsch accessible
       become: true
       ansible.builtin.lineinfile:
         path: /etc/hosts
-        line: '10.133.7.116 quatsch'
+        line: "10.133.7.116 quatsch"
         regexp: 10.133.7.116\s+quatsch
 
     - name: Set system flake registry
       become: true
       ansible.builtin.copy:
-        src: './registry.json'
-        dest: '/etc/nix/registry.json'
-        owner: 'root'
-        group: 'root'
-        mode: '644'
+        src: "./registry.json"
+        dest: "/etc/nix/registry.json"
+        owner: "root"
+        group: "root"
+        mode: "644"
 
     - name: Enable node_exporter
       become: true
@@ -43,20 +43,20 @@
     - name: Ensure /etc/firefox/policies exists.
       become: true
       ansible.builtin.file:
-        path: '/etc/firefox/policies/'
-        state: 'directory'
-        owner: 'root'
-        group: 'root'
-        mode: '0755'
+        path: "/etc/firefox/policies/"
+        state: "directory"
+        owner: "root"
+        group: "root"
+        mode: "0755"
 
     # Do nothing for now.
     - name: Set Firefox policies.json
       become: true
       ansible.builtin.copy:
-        dest: '/etc/firefox/policies/policies.json'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
+        dest: "/etc/firefox/policies/policies.json"
+        group: "root"
+        owner: "root"
+        mode: "644"
         content: |
           {
             "policies": {}
@@ -67,44 +67,43 @@
       ansible.posix.authorized_key:
         user: root
         state: present
-        key: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly'
+        key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEH5XuWSd+HLrit6ckDHOcn1gEV5SBnMoRekPDMBYyLQ root@polly"
 
     - name: Trust Reednet SSH keys
       become: true
       ansible.builtin.copy:
-        dest: '/etc/ssh/ssh_known_hosts'
-        src: 'ssh_known_hosts'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
+        dest: "/etc/ssh/ssh_known_hosts"
+        src: "ssh_known_hosts"
+        group: "root"
+        owner: "root"
+        mode: "644"
 
     - name: Ensure TLS dir exists.
       become: true
       ansible.builtin.file:
-        path: '/var/lib/tls-cert'
-        state: 'directory'
-        owner: 'caddy'
-        group: 'caddy'
-        mode: '0700'
-
+        path: "/var/lib/tls-cert"
+        state: "directory"
+        owner: "caddy"
+        group: "caddy"
+        mode: "0700"
 
     - name: Install TLS keys
       become: true
       ansible.builtin.copy:
-        src: '../certs/{{ inventory_hostname }}.key'
-        dest: '/var/lib/tls-cert/{{ inventory_hostname }}.key'
+        src: "../certs/{{ inventory_hostname }}.key"
+        dest: "/var/lib/tls-cert/{{ inventory_hostname }}.key"
         owner: caddy
         group: caddy
-        mode: '400'
+        mode: "400"
 
     - name: Install TLS certs
       become: true
       ansible.builtin.copy:
-        src: '../certs/{{ inventory_hostname }}.cert'
-        dest: '/var/lib/tls-cert/{{ inventory_hostname }}.cert'
+        src: "../certs/{{ inventory_hostname }}.cert"
+        dest: "/var/lib/tls-cert/{{ inventory_hostname }}.cert"
         owner: caddy
         group: caddy
-        mode: '400'
+        mode: "400"
 
     - name: Configure Caddy on hosts
       become: true
@@ -116,6 +115,7 @@
 
             {% if inventory_hostname == 'polly.reed.edu' %}
             reverse_proxy /pwwidget localhost:7497
+            reverse_proxy /leland localhost:2540
             reverse_proxy localhost:8000
             {% endif %}
 
@@ -128,10 +128,10 @@
             redir https://patty.reed.edu{uri} permanent
           }
           {% endif %}
-        dest: '/etc/caddy/Caddyfile'
-        owner: 'caddy'
-        group: 'caddy'
-        mode: '600'
+        dest: "/etc/caddy/Caddyfile"
+        owner: "caddy"
+        group: "caddy"
+        mode: "600"
 
     - name: Enable Caddy
       become: true
@@ -143,9 +143,9 @@
       become: true
       ansible.builtin.copy:
         dest: /etc/apt/apt.conf.d/50unattended-upgrades
-        group: 'root'
-        owner: 'root'
-        mode: '444'
+        group: "root"
+        owner: "root"
+        mode: "444"
         content: |
           Unattended-Upgrade::Allowed-Origins {
                   "${distro_id}:${distro_codename}";
@@ -169,11 +169,11 @@
     - name: Override passwd
       become: true
       ansible.builtin.copy:
-        src: '../scripts/passwd.sh'
-        dest: '/usr/local/bin/passwd'
-        group: 'root'
-        owner: 'root'
-        mode: '555'
+        src: "../scripts/passwd.sh"
+        dest: "/usr/local/bin/passwd"
+        group: "root"
+        owner: "root"
+        mode: "555"
 
     # This is literally the best way to disable password changing from the GNOME GUI.
     - name: Disable GNOME System Settings Panel
@@ -181,10 +181,10 @@
       ansible.builtin.copy:
         content: |
           # See Ansible playbook :)
-        dest: '/usr/share/applications/gnome-system-panel.desktop'
-        group: 'root'
-        mode: '644'
-        owner: 'root'
+        dest: "/usr/share/applications/gnome-system-panel.desktop"
+        group: "root"
+        mode: "644"
+        owner: "root"
 
 - name: Configure backups
 
@@ -195,10 +195,10 @@
     - name: Install backup service
       become: true
       ansible.builtin.copy:
-        dest: '/etc/systemd/system/backups.service'
-        group: 'root'
-        owner: 'root'
-        mode: '600'
+        dest: "/etc/systemd/system/backups.service"
+        group: "root"
+        owner: "root"
+        mode: "600"
         content: |
           [Unit]
           Description=Run borg backup of /var and /etc.
@@ -216,10 +216,10 @@
     - name: Install backup timer
       become: true
       ansible.builtin.copy:
-        dest: '/etc/systemd/system/backups.timer'
-        group: 'root'
-        owner: 'root'
-        mode: '600'
+        dest: "/etc/systemd/system/backups.timer"
+        group: "root"
+        owner: "root"
+        mode: "600"
         content: |
           [Timer]
           OnCalendar=daily
