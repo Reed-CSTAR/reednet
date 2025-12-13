@@ -5,11 +5,11 @@
     - name: Install vs-codium keyring
       become: true
       ansible.builtin.copy:
-        src: './vscodium-deb-rpm-repo-pub.gpg'
-        dest: '/usr/share/keyrings/vscodium-archive-keyring.gpg'
-        group: 'root'
-        owner: 'root'
-        mode: '644'
+        src: "./vscodium-deb-rpm-repo-pub.gpg"
+        dest: "/usr/share/keyrings/vscodium-archive-keyring.gpg"
+        group: "root"
+        owner: "root"
+        mode: "644"
       when: inventory_hostname in groups['guis']
     - name: Add vs codium repository
       become: true
@@ -18,7 +18,7 @@
         uris: https://download.vscodium.com/debs
         suites: vscodium
         components: main
-        signed_by: '/usr/share/keyrings/vscodium-archive-keyring.gpg'
+        signed_by: "/usr/share/keyrings/vscodium-archive-keyring.gpg"
       when: inventory_hostname in groups['guis']
     - name: Install VS code on GUI hosts
       become: true
@@ -67,8 +67,8 @@
     - name: Install asciiquarium
       become: true
       ansible.builtin.get_url:
-        url: 'https://raw.githubusercontent.com/cmatsuoka/asciiquarium/refs/heads/master/asciiquarium'
-        dest: '/usr/local/bin/asciiquarium'
-        group: 'root'
-        owner: 'root'
-        mode: '555'
+        url: "https://raw.githubusercontent.com/cmatsuoka/asciiquarium/refs/heads/master/asciiquarium"
+        dest: "/usr/local/bin/asciiquarium"
+        group: "root"
+        owner: "root"
+        mode: "555"
