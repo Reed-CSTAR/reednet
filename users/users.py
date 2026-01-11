@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from dataclasses import dataclass
 from itertools import chain
 
@@ -46,36 +44,6 @@ class User:
             }
         ]
 
-USERS: list[User] = [
-        User('cgilligan', 'Connor Gilligan', shell='/usr/bin/fish'),
-        User('doranp', 'Doran Penner', shell='/usr/bin/fish'),
-        User('milesc', 'Miles Churchland'),
-        User('mniederman', 'Max Niederman'),
-        User('tristanf', 'Tristan Figueroa-Reid'),
-        User('araney', 'Aoife Raney'),
-        User('yiyuanli', 'Yi Yuanli'),
-        User('atali', 'Tali Auster'),
-        User('dstewardson', 'Duncan Stewardson'),
-        User('mbear', 'Michael Bear'),
-        User('paramkapur', 'Param Kapur'),
-        User('bsmith', 'B Smith'),
-        User('yyou', 'Franklin You'),
-        User('lrussell', 'Leland Russell'),
-        User('victorl', 'Victor Laczay'),
-        User('ulas', 'Ula Shipman'),
-        User('link', 'Kaishin Lin'),
-        User('kiaravyas', 'Kiara Vyas'),
-        User('kcowger', 'Kellyn Cowger'),
-        User('ksaksena', 'Atlas K Saksena'),
-        User('manuklein', 'Manu Klein'),
-        User('djmatthisen', 'Dylan Matthisen'),
-        User('sorendstevens', 'Søren Stevens'),
-        User('mjaram', 'Michael Aram'),
-]
-
-def main():
-    output = list(chain.from_iterable(map(User.to_conf, USERS)))
+def run(users):
+    output = list(chain.from_iterable(map(User.to_conf, users)))
     yaml.dump(output, sys.stdout, default_flow_style=False, sort_keys=False)
-
-if __name__ == '__main__':
-    main()
