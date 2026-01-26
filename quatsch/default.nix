@@ -20,6 +20,9 @@
     }
   ];
 
+  # Allow sign communication
+  networking.firewall.allowedTCPPorts = [ 4502 ];
+
   nix.settings."experimental-features" = [ "nix-command" "flakes" ];
 
   time.timeZone = "America/Los_Angeles";
