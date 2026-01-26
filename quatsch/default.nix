@@ -13,6 +13,13 @@
   networking.hostName = "quatsch";
   networking.networkmanager.enable = true;
 
+  networking.interfaces.enp0s6f1u2.ipv4.addresses = [
+    {
+      address = "10.114.102.2";
+      prefixLength = 24;
+    }
+  ];
+
   nix.settings."experimental-features" = [ "nix-command" "flakes" ];
 
   time.timeZone = "America/Los_Angeles";
