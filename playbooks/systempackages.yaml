@@ -72,3 +72,15 @@
         group: "root"
         owner: "root"
         mode: "555"
+    - name: Fetch Go
+      become: true
+      ansible.builtin.get_url:
+        url: "https://go.dev/dl/go1.25.6.linux-amd64.tar.gz"
+        dest: /root/go1.25.6.linux-amd64.tar.gz
+        checksum: "sha256:f022b6aad78e362bcba9b0b94d09ad58c5a70c6ba3b7582905fababf5fe0181a"
+    - name: Extract Go
+      become: true
+      ansible.builtin.unarchive:
+        remote_src: true
+        src: /root/go1.25.6.linux-amd64.tar.gz
+        dest: /usr/local
