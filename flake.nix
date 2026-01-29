@@ -3,10 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    sign-sink.url = "github:atalii/nextbus-sign-server";
+    sign-source.url = "github:atalii/railway-uptime-monitor";
   };
 
   outputs =
-    inputs@{ self, nixpkgs, ... }:
+    inputs@{ self, nixpkgs, sign-sink, sign-source, ... }:
     let
       allSystems = nixpkgs.lib.systems.flakeExposed;
       forAllSystems = nixpkgs.lib.genAttrs allSystems;
@@ -78,6 +81,7 @@
       nixosConfigurations.quatsch = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	modules = [ ./quatsch ];
+	specialArgs = { inherit sign-sink sign-source; };
       };
 
       formatter = define (pkgs: pkgs.nixfmt);

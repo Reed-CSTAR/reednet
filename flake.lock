@@ -16,9 +16,77 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1769652332,
+        "narHash": "sha256-EcYcVR8uNkGc2NZGa4Tw1jgW/kHt6D3uG7ql22g0FIo=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "fb5b1a75f4b25f5184dd46ad3ef67c7fb5671dfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1769540155,
+        "narHash": "sha256-1RctsHxtoeQ0yT+TAhAmnkkqOG3wvmhLv1t/Bxl6UeQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "7a6746ae292e46bedbd532f422eff4434607f6fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "sign-sink": "sign-sink",
+        "sign-source": "sign-source"
+      }
+    },
+    "sign-sink": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1769653896,
+        "narHash": "sha256-IfZX1G779Wkq7VafOARtVFW1eD/gYMBDeJmqfcIYEbo=",
+        "owner": "atalii",
+        "repo": "nextbus-sign-server",
+        "rev": "2218fd567dca951b45936461a93c25fdb1395cf9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "atalii",
+        "repo": "nextbus-sign-server",
+        "type": "github"
+      }
+    },
+    "sign-source": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1769540789,
+        "narHash": "sha256-W83zkHPqq5i2MUnvrBvkxEew47CRnzSbD5BZ6lWUv34=",
+        "owner": "atalii",
+        "repo": "railway-uptime-monitor",
+        "rev": "d2cba48612e90f8edbd7832738c7205cad2786fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "atalii",
+        "repo": "railway-uptime-monitor",
+        "type": "github"
       }
     }
   },
