@@ -208,7 +208,7 @@
 
           Environment="BORG_PASSCOMMAND=/bin/cat /var/borg-passphrase"
           ExecStart=/bin/sh -c 'borg create -v --stats \
-            "ssh://backups@quatsch/home/backups/{{ ansible_hostname }}::$(date --iso-8601=minutes)" \
+            "ssh://backups@quatsch/home/backups/{{ ansible_facts["hostname"] }}::$(date --iso-8601=minutes)" \
             /var /etc --exclude /var/tmp'
 
           ReadOnlyPaths=/var /etc
