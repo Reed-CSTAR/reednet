@@ -14,7 +14,7 @@
   networking.hostName = "quatsch";
   networking.networkmanager.enable = true;
 
-  networking.interfaces.enp0s6f1u2.ipv4.addresses = [
+  networking.interfaces."enp0s6f1u2c2".ipv4.addresses = [
     {
       address = "10.114.102.2";
       prefixLength = 24;
