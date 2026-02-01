@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1769527094,
-        "narHash": "sha256-xV20Alb7ZGN7qujnsi5lG1NckSUmpIb05H2Xar73TDc=",
+        "lastModified": 1769740369,
+        "narHash": "sha256-xKPyJoMoXfXpDM5DFDZDsi9PHArf2k5BJjvReYXoFpM=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "afce96367b2e37fc29afb5543573cd49db3357b7",
+        "rev": "6308c3b21396534d8aaeac46179c14c439a89b8a",
         "type": "github"
       },
       "original": {
@@ -58,11 +58,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1769653896,
-        "narHash": "sha256-IfZX1G779Wkq7VafOARtVFW1eD/gYMBDeJmqfcIYEbo=",
+        "lastModified": 1769660972,
+        "narHash": "sha256-mNt6NgA8PioitYW17OnBW8VMCL1Tlig69isi3q0KX/g=",
         "owner": "atalii",
         "repo": "nextbus-sign-server",
-        "rev": "2218fd567dca951b45936461a93c25fdb1395cf9",
+        "rev": "e490b549ed4ab90bb731fccea42053480def023d",
         "type": "github"
       },
       "original": {
@@ -76,11 +76,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1769655119,
-        "narHash": "sha256-HeRuR0kyR/242t0PjivB85Ms21SkL+wyGKnGaadjiYY=",
+        "lastModified": 1769891371,
+        "narHash": "sha256-vQlwlQsaGziwncgjkh0MI5EfSjJlgRibmT36KSQ3I3A=",
         "owner": "atalii",
         "repo": "railway-uptime-monitor",
-        "rev": "3ff80ec4a51afa95f66a10cd01e52d4e25c31262",
+        "rev": "7ce02717e7e88cef4058aecce66a53cdf6cbecd8",
         "type": "github"
       },
       "original": {
