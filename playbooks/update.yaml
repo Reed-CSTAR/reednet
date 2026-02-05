@@ -16,6 +16,12 @@
       register: out
       changed_when: out.rc == 0
       failed_when: out.rc != 0
+    - name: Update Coder
+      become: true
+      ansible.builtin.shell:
+        cmd: |
+          curl -fL https://coder.com/install.sh | sh
+      when: inventory_hostname == "patty.reed.edu"
     - name: Check for systems that require a reboot
       ansible.builtin.command: find -L /var/run -maxdepth 1 -wholename /var/run/reboot-required
       register: reboot_required
