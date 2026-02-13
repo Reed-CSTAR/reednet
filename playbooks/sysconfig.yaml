@@ -115,7 +115,6 @@
 
             {% if inventory_hostname == 'polly.reed.edu' %}
             reverse_proxy /pwwidget localhost:7497
-            reverse_proxy /leland localhost:2540
             reverse_proxy localhost:8000
             {% endif %}
 
