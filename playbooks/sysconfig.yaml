@@ -116,6 +116,12 @@
             {% if inventory_hostname == 'polly.reed.edu' %}
             reverse_proxy /pwwidget localhost:7497
             reverse_proxy localhost:8000
+
+            handle_path /polytopia/certs/* {
+              file_server {
+                root /home/secrets-manager/world-readable
+              }
+            }
             {% endif %}
 
             {% if inventory_hostname == 'patty.reed.edu' %}
