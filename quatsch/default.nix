@@ -12,7 +12,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "quatsch";
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
+  networking.useNetworkd = true;
 
   networking.interfaces."enp0s6f1u2c2".ipv4.addresses = [
     {
