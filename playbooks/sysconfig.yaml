@@ -122,6 +122,16 @@
                 root /home/secrets-manager/world-readable
               }
             }
+
+            basicauth /polytopia/secrets/* bcrypt {
+              Polytopia "$2a$14$/b03L8rFOTCb6TyzMcDh5e1Ddra/DXHf783atbqzsFjOQ.beYHPza"
+            }
+
+            handle_path /polytopia/secrets/* {
+              file_server {
+                root /home/secrets-manager/secrets
+              }
+            }
             {% endif %}
 
             {% if inventory_hostname == 'patty.reed.edu' %}
