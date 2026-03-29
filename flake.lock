@@ -2,11 +2,11 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1773476965,
-        "narHash": "sha256-Laaj25PvGeoP5SPhMfMGxvWqM6ZjZ6LdUeEhP6b3czY=",
+        "lastModified": 1775126147,
+        "narHash": "sha256-J0dZU4atgcfo4QvM9D92uQ0Oe1eLTxBVXjJzdEMQpD0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f82ce7af0b79ac154b12e27ed800aeb97413723c",
+        "rev": "8d8c1fa5b412c223ffa47410867813290cdedfef",
         "type": "github"
       },
       "original": {
@@ -58,11 +58,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1771132178,
-        "narHash": "sha256-uTlwksRRugxuOHGwwl+LxvpB1FK+bfvpuJz16VYvp/8=",
+        "lastModified": 1775329145,
+        "narHash": "sha256-SCi8365BdnI7rkF2f/WgZ88uiSRmJIobr/0IShpFdVo=",
         "owner": "atalii",
         "repo": "nextbus-sign-server",
-        "rev": "71b01656cd07b12d11f4ffd251ed170c069eafb9",
+        "rev": "541b64730b8539946e8cec0be538dd8f37e419d6",
         "type": "github"
       },
       "original": {
