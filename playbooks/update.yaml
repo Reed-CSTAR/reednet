@@ -12,7 +12,7 @@
         # /etc/bash.bashrc (in which we can find nix-required environment
         # variables).
         cmd: |
-          bash -l -c 'nix upgrade-nix'
+          bash -l -c 'nix upgrade-nix --profile /nix/var/nix/profiles/default'
       register: out
       changed_when: out.rc == 0
       failed_when: out.rc != 0
