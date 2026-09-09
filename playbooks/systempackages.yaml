@@ -61,7 +61,7 @@
           - caddy
           - just
           - r-base
-          - nextpnr-gowin
+          - opam
         update_cache: true
         cache_valid_time: 3600
     - name: Install asciiquarium
